@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <link rel="stylesheet" href="css/todo.css"> <!-- Link to CSS file -->
+</head>
+<body>
+<header>
+    <h1>Todo List</h1>
+</header>
+<main>
+    <section id="create-todo">
+        <h2>Create Todo</h2>
+        <form id="todo-form">
+            <input type="text" id="todo-title" placeholder="Enter todo title" required>
+            <textarea id="todo-description" placeholder="Enter todo description" required></textarea>
+            <input type="date" id="todo-due-date">
+            <input type="number" id="todo-priority" placeholder="Enter priority" min="1" required>
+            <input type="text" id="todo-category" placeholder="Enter category" required>
+            <button type="submit">Add Todo</button>
+        </form>
+    </section>
+    <section id="todo-list">
+        <h2>All Todos</h2>
+        <ul id="todos">
+            <!-- Todo items will be displayed here -->
+        </ul>
+    </section>
+</main>
+<script src="js/todo.js"></script> <!-- Link to JavaScript file -->
+</body>
+</html>
