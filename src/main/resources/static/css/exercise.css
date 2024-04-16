@@ -1,0 +1,83 @@
+/* Reset default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+/* Header styles */
+header {
+    background-color: #007bff;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+/* Container styles */
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Category button styles */
+.categories {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.categories button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.categories button:hover {
+    background-color: #0056b3;
+}
+
+/* Exercise container styles */
+.exercises {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 20px;
+}
+
+/* Exercise card styles */
+.exercise-card {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #fff;
+    padding: 20px;
+}
+
+.exercise-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+.exercise-card h3 {
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+.exercise-card p {
+    margin-top: 5px;
+    font-size: 14px;
+}

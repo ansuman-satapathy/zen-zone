@@ -66,4 +66,15 @@ public class TodoController {
     public List<Todo> sortByPriority() {
         return todoService.sortByPriority();
     }
+
+    @PostMapping("/{id}/complete")
+    public ResponseEntity<Todo> markTodoAsCompleted(@PathVariable Long id) {
+        try {
+            Todo completedTodo = todoService.markTodoAsCompleted(id);
+            return new ResponseEntity<>(completedTodo, HttpStatus.OK);
+        } catch (IllegalArgumentException e) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
 }
+

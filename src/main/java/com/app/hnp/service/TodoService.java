@@ -21,6 +21,7 @@ public class TodoService {
     }
 
     public Todo createTodo(Todo todo) {
+        todo.setCompleted(false);
         return todoRepository.save(todo);
     }
 
@@ -55,5 +56,17 @@ public class TodoService {
         return getAllTodos().stream()
                 .sorted(Comparator.comparingInt(Todo::getPriority))
                 .collect(Collectors.toList());
+    }
+
+    public Todo markTodoAsCompleted(Long id) {
+        Optional<Todo> optionalTodo = todoRepository.findById(id);
+        if (optionalTodo.isPresent()) {
+            Todo todo = optionalTodo.get();
+            todo.setCompleted(true); // Marking the todo as completed
+            return todoRepository.save(todo); // Persisting the change in the database
+        } else {
+            // Handle case where todo with the given id is not found
+            throw new IllegalArgumentException("Todo with id " + id + " not found");
+        }
     }
 }

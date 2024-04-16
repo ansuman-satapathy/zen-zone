@@ -1,0 +1,49 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #fafafa;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.timer-container {
+    text-align: center;
+}
+
+#timer {
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+
+.duration-selection {
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #00bcd4;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition-duration: 0.4s;
+    margin-right: 10px;
+}
+
+button:hover {
+    background-color: #008ba3;
+}
+
+input[type="range"] {
+    width: 300px;
+    margin: 0 auto;
+}

@@ -1,0 +1,24 @@
+/* styles.css */
+.timer-container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+#timer {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.button-container {
+    margin-bottom: 20px;
+}
+
+.button-container button {
+    margin: 0 5px;
+    padding: 10px 20px;
+    font-size: 18px;
+}
+
+#mode {
+    font-size: 24px;
+}
