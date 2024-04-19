@@ -1,7 +1,7 @@
-package com.app.hnp.service;
+package com.app.zenzone.service;
 
-import com.app.hnp.model.Habit;
-import com.app.hnp.repository.HabitRepository;
+import com.app.zenzone.model.Habit;
+import com.app.zenzone.repository.HabitRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

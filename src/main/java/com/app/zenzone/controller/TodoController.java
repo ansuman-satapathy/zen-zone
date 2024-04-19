@@ -1,7 +1,7 @@
-package com.app.hnp.controller;
+package com.app.zenzone.controller;
 
-import com.app.hnp.model.Todo;
-import com.app.hnp.service.TodoService;
+import com.app.zenzone.model.Todo;
+import com.app.zenzone.service.TodoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

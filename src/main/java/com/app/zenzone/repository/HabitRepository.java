@@ -1,6 +1,6 @@
-package com.app.hnp.repository;
+package com.app.zenzone.repository;
 
-import com.app.hnp.model.Habit;
+import com.app.zenzone.model.Habit;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

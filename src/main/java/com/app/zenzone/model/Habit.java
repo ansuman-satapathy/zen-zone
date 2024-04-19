@@ -1,4 +1,4 @@
-package com.app.hnp.model;
+package com.app.zenzone.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

@@ -1,7 +1,7 @@
-package com.app.hnp.controller;
+package com.app.zenzone.controller;
 
-import com.app.hnp.model.Journal;
-import com.app.hnp.service.JournalService;
+import com.app.zenzone.model.Journal;
+import com.app.zenzone.service.JournalService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

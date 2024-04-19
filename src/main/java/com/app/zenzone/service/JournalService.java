@@ -1,7 +1,7 @@
-package com.app.hnp.service;
+package com.app.zenzone.service;
 
-import com.app.hnp.model.Journal;
-import com.app.hnp.repository.JournalRepository;
+import com.app.zenzone.model.Journal;
+import com.app.zenzone.repository.JournalRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

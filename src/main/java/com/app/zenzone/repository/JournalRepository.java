@@ -1,6 +1,6 @@
-package com.app.hnp.repository;
+package com.app.zenzone.repository;
 
-import com.app.hnp.model.Journal;
+import com.app.zenzone.model.Journal;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

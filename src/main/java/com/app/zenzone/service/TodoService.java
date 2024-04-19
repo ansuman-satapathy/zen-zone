@@ -1,7 +1,7 @@
-package com.app.hnp.service;
+package com.app.zenzone.service;
 
-import com.app.hnp.model.Todo;
-import com.app.hnp.repository.TodoRepository;
+import com.app.zenzone.model.Todo;
+import com.app.zenzone.repository.TodoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

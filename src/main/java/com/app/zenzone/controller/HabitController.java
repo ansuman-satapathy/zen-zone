@@ -1,7 +1,7 @@
-package com.app.hnp.controller;
+package com.app.zenzone.controller;
 
-import com.app.hnp.model.Habit;
-import com.app.hnp.service.HabitService;
+import com.app.zenzone.model.Habit;
+import com.app.zenzone.service.HabitService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
