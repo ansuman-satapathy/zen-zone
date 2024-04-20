@@ -39,10 +39,14 @@ public class JournalController {
 
     @PutMapping("/{id}")
     public ResponseEntity<Journal> updateJournal(@PathVariable Long id, @RequestBody Journal updatedJournal) {
-        Journal updated = journalService.updateJournal(id, updatedJournal);
-        return updated != null ? new ResponseEntity<>(updated, HttpStatus.OK)
-                : new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        Journal journal = journalService.updateJournal(id, updatedJournal);
+        if (journal != null) {
+            return ResponseEntity.ok(journal); // Return 200 OK with the updated journal
+        } else {
+            return ResponseEntity.notFound().build(); // Return 404 Not Found if journal is not found
+        }
     }
+
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteJournal(@PathVariable Long id) {

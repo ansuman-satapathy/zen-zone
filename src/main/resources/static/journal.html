@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journal</title>
+    <link rel="stylesheet" href="css/journal.css">
+</head>
+<body>
+<div class="container">
+    <h1>Journal</h1>
+    <form id="journalForm">
+        <input type="text" id="titleInput" placeholder="Title" required>
+        <textarea id="entryInput" placeholder="Journal Entry" required></textarea>
+        <input type="date" id="dateInput" required>
+        <button type="submit">Add Journal</button>
+    </form>
+    <div id="journalsContainer"></div>
+</div>
+
+<script src="js/journal.js"></script>
+</body>
+</html>
