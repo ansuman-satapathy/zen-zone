@@ -1,5 +1,7 @@
 package com.app.zenzone.model;
 
+import java.time.LocalDateTime;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -12,8 +14,9 @@ public class Habit {
     private Long id;
     private String name;
     private String description;
-    private int completionsPerDay;
     private String streakGoal;
+    private boolean completed;
+    
 
     public Long getId() {
         return id;
@@ -39,14 +42,6 @@ public class Habit {
         this.description = description;
     }
 
-    public int getCompletionsPerDay() {
-        return completionsPerDay;
-    }
-
-    public void setCompletionsPerDay(int completionsPerDay) {
-        this.completionsPerDay = completionsPerDay;
-    }
-
     public String getStreakGoal() {
         return streakGoal;
     }
@@ -54,4 +49,14 @@ public class Habit {
     public void setStreakGoal(String streakGoal) {
         this.streakGoal = streakGoal;
     }
+
+    public boolean isCompleted() {
+        return completed;
+    }
+
+    public void setCompleted(boolean completed) {
+        this.completed = completed;
+    }
+
+
 }

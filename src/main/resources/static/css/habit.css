@@ -1,0 +1,96 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+section {
+    margin-bottom: 2rem;
+}
+
+h2 {
+    color: #333;
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input[type="text"] {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    padding: 0.5rem 1rem;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+/* Habit Cards */
+#habitsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0;
+}
+
+.habit-card {
+    width: calc(50% - 1rem);
+        background-color: #f9f9f9;
+        border: 3px solid #101424;
+        border-radius: 4px;
+        padding: 2rem;
+        margin-bottom: 1rem;
+        transition: all 1s ease-out; /* Smooth transition for the zoom effect */
+}
+
+.habit-card h3 {
+    color: #333;
+    margin-top: 0;
+}
+
+.habit-card p {
+    color: #666;
+    margin-bottom: 0;
+}
+
+.habit-card:hover {
+    transform: scale(1); /* Move the card 10px upwards on hover */
+}
+
+.habit.completed {
+    text-decoration: line-through;
+    opacity: 0.5; /* Optional: decrease opacity for completed todos */
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    main {
+        padding: 1rem;
+    }
+}

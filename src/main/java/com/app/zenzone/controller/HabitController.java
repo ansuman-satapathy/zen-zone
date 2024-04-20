@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/habits")
@@ -17,19 +18,15 @@ public class HabitController {
     private HabitService habitService;
 
     @GetMapping
-    public ResponseEntity<List<Habit>> getAllHabits() {
-        List<Habit> habits = habitService.getAllHabits();
-        return new ResponseEntity<>(habits, HttpStatus.OK);
+    public List<Habit> getAllHabits() {
+        return habitService.getAllHabits();
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<Habit> getHabitById(@PathVariable Long id) {
-        Habit habit = habitService.getHabitById(id);
-        if (habit != null) {
-            return new ResponseEntity<>(habit, HttpStatus.OK);
-        } else {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
+        Optional<Habit> habit = Optional.ofNullable(habitService.getHabitById(id));
+        return habit.map(value -> new ResponseEntity<>(value, HttpStatus.OK))
+                .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
     @PostMapping
@@ -40,23 +37,32 @@ public class HabitController {
 
     @PutMapping("/{id}")
     public ResponseEntity<Habit> updateHabit(@PathVariable Long id, @RequestBody Habit habit) {
-        Habit updatedHabit = habitService.updateHabit(id, habit);
-        if (updatedHabit != null) {
+        try {
+            Habit updatedHabit = habitService.updateHabit(id, habit);
             return new ResponseEntity<>(updatedHabit, HttpStatus.OK);
-        } else {
+        } catch (IllegalArgumentException e) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteHabit(@PathVariable Long id) {
+    public void deleteHabit(@PathVariable Long id) {
         habitService.deleteHabit(id);
-        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
     @DeleteMapping
-    public ResponseEntity<Void> deleteAllHabits() {
+    public void deleteAllHabits() {
         habitService.deleteAllHabits();
-        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
+
+    @PostMapping("/{id}/complete")
+    public ResponseEntity<Habit> markHabitAsCompleted(@PathVariable Long id) {
+        try {
+            Habit completedHabit = habitService.markHabitAsCompleted(id);
+            return new ResponseEntity<>(completedHabit, HttpStatus.OK);
+        } catch (IllegalArgumentException e) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
 }

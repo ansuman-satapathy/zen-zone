@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Habit Tracker</title>
+    <link rel="stylesheet" href="css/habit.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Habit Tracker</h1>
+    </header>
+
+    <main>
+      <section id="add-habit">
+        <h2>Add New Habit</h2>
+        <form id="habitForm">
+          <input
+            type="text"
+            id="habit-name"
+            placeholder="Enter habit name"
+            required
+          />
+          <input
+            type="text"
+            id="habit-description"
+            placeholder="Description"
+          />
+          <input
+            type="text"
+            id="habit-streak-goal"
+            placeholder="Complete Daily or Weekly or Monthly"
+          />
+          <button type="submit">Add Habit</button>
+        </form>
+      </section>
+
+      <section id="all-habits">
+        <h2>All Habits</h2>
+        <div id="habitsContainer">
+          <!-- Habit cards will be dynamically added here -->
+        </div>
+        <p><b>Note: </b>To reset the completion status, click on <b>Edit</b>, then click <b>Update Habit</b> without changing any data. </p>
+      </section>
+    </main>
+
+    <script src="js/habit.js"></script>
+  </body>
+</html>
