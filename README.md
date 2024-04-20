@@ -5,7 +5,7 @@ Everything you need to be more productive and to fix your physical & mental heal
 ## Table of Contents
 
 - [Introduction](#introduction)
-- [Key Features](#keyfeatures)
+- [Key Features](#key-features)
 - [Technologies Used](#technologies-used)
 - [Pre-requisites](#pre-requisites)
 - [Installation](#installation)
