@@ -1,0 +1,78 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+form input, form button {
+    margin: 5px;
+    padding: 8px;
+    font-size: 16px;
+}
+
+form input[type="date"] {
+    width: calc(50% - 20px);
+}
+
+form input[type="number"] {
+    width: calc(50% - 20px);
+}
+
+#todosContainer {
+    margin-top: 20px;
+}
+
+.todo {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #fff;
+}
+
+.todo h3 {
+    margin-top: 0;
+}
+
+.todo button {
+    margin-left: 10px;
+    padding: 5px 10px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.completeButton {
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+}
+
+.deleteButton {
+    background-color: #f44336;
+    color: #fff;
+    border: none;
+}
+.completed {
+    text-decoration: line-through;
+    opacity: 0.5; /* Optional: decrease opacity for completed todos */
+}
