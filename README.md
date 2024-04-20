@@ -5,11 +5,10 @@ Everything you need to be more productive and to fix your physical & mental heal
 ## Table of Contents
 
 - [Introduction](#introduction)
-- [Features](#features)
+- [Key Features](#keyfeatures)
 - [Technologies Used](#technologies-used)
-- [Getting Started](#getting-started)
+- [Pre-requisites](#pre-requisites)
 - [Installation](#installation)
-- [Usage](#usage)
 - [Contributing](#contributing)
 
 ## Introduction
@@ -22,7 +21,7 @@ ZenZone: Personal Health and Productivity Suite.
 
 The Personal Productivity Suite is a web application designed to help users manage various aspects of their daily life, including task management, journaling, time management, habit tracking, mindfulness practice, and exercise. The aim of the application is to provide users with a centralized platform where they can organize their tasks, track their progress, and cultivate healthy habits to enhance their productivity and well-being.
 
-### Key Features:
+## Key Features:
 
 1. Todo List: Allows users to create, update, and delete tasks, set priorities, deadlines, and categorize tasks for better organization.
 
