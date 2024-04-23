@@ -1,3 +1,15 @@
+// Theme Switch
+var logout = document.getElementById("logout");
+icon.onclick = function () {
+    document.body.classList.toggle("darkTheme");
+    if (document.body.classList.contains("darkTheme")) {
+        icon.className = "bx bxs-sun";
+    } else{
+        icon.className = "bx bxs-moon"
+    }
+}
+
+// button eventListners
 document.getElementById('todo-btn').addEventListener('click', function() {
     window.location.href = '/todo.html'; // Redirect to the todo page
 });

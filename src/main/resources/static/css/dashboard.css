@@ -1,38 +1,259 @@
-body {
-  font-family: Arial, sans-serif;
+/* importing Poppins (sans-serif) font from googlr fonts */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/* General css */
+* {
   margin: 0;
   padding: 0;
-  background-color: #f0f0f0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  scroll-behavior: smooth;
+  font-family: "Poppins", sans-serif;
 }
 
-.container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-  padding: 20px;
+/* Color scheme for theme purposes */
+:root {
+  --mainBackgroundColor: #ffffff;
+  --headerColor: #06006c;
+  --mainTextColor: #020025;
+  --secondTextColor: #5d5d5d;
+  --headTextColor: #ffffff;
+  --headerStyleColor: #d6d4f9;
+  --spanColor: #de60f8;
+  --blurCircle-1: #d4d3ff;
+  --blurCircle-2: #c2e9ff;
+  --divBackgroundColor-1: #bfc5fd;
+  --divBackgroundColor-2: #999fc2;
+}
+/* Dark theme */
+.darkTheme {
+  --mainBackgroundColor: #1f2442;
+  --headerColor: #020025;
+  --mainTextColor: #ffffff;
+  --secondTextColor: #afafaf;
+  --headTextColor: #ffffff;
+  --headerStyleColor: #d6d4f9;
+  --spanColor: #00f4e6;
+  --blurCircle-1: #84009e67;
+  --blurCircle-2: #00ccff4d;
+  --divBackgroundColor-1: #7381f8;
+  --divBackgroundColor-2: #525771;
 }
 
+html {
+  font-size: 62%;
+  overflow-x: hidden;
+}
+
+body {
+  background: var(--mainBackgroundColor);
+  color: var(--mainTextColor);
+}
+
+/* Header design */
 header {
-  background-color: #333;
-  color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem 9%;
+  background: var(--headerColor);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+
+/* ZenZone Logo Stylling */
+h1 {
+  font-size: 2.7rem;
+  color: var(--headTextColor);
+  font-weight: 800;
   text-align: center;
-  padding: 20px 0;
+  flex: 1;
+}
+span {
+  font-size: 3.2rem;
+  color: var(--spanColor);
 }
 
-button {
-  background-color: #fff;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  padding: 20px;
-  width: 200px;
-  height: 150px;
-  font-size: 16px;
+nav {
+  font-size: 1.5rem;
+  color: var(--mainTextColor);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+}
+
+nav i {
+  font-size: 2rem;
+  color: var(--headerStyleColor);
+  margin-right: 0.5rem;
+  transition: 0.3s;
   cursor: pointer;
-  transition: all 0.3s ease;
+}
+nav i:hover {
+  transform: scale(1.2);
 }
 
-button:hover {
-  background-color: #f0f0f0;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.logout {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 10rem;
+  height: 100%;
+  background: transparent;
+  border: 0;
+  font-size: 1.4rem;
+  font-weight: 500;
+  letter-spacing: 0.1rem;
+  color: var(--headerStyleColor);
+  cursor: pointer;
+  transition: 0.3s;
+}
+.logout:hover {
+  transform: scale(1.2);
+}
+
+/* dashboard body design */
+section {
+  min-height: 100vh;
+  padding: 10rem 9% 2rem;
+}
+
+/* Default container styling */
+.container {
+  max-width: 100%;
+}
+.container p {
+  text-align: center;
+  font-size: 1.2rem;
+  margin: 2rem 0 3rem;
+}
+
+/* blur Circle stylling */
+.blurCircle-1 {
+  position: absolute;
+  top: -8rem;
+  left: -8rem;
+  width: 45rem;
+  height: 45rem;
+  background-color: var(--blurCircle-1);
+  border-radius: 50%;
+  filter: blur(5rem);
+  z-index: -1;
+}
+.blurCircle-2 {
+  position: absolute;
+  bottom: 5rem;
+  right: -20rem;
+  width: 50rem;
+  height: 50rem;
+  background-color: var(--blurCircle-2);
+  border-radius: 50%;
+  filter: blur(5rem);
+  z-index: -1;
+}
+
+.box {
+  position: relative;
+  border: none;
+  border-radius: 4rem;
+  width: calc(33.33% - 6rem);
+  height: 30rem;
+  margin-right: 6rem;
+  margin-top: 5rem;
+  float: left;
+  box-sizing: border-box;
+  transition: all 0.3s;
+  text-align: center;
+  height: 25rem;
+}
+.box:last-child {
+  margin-right: 0;
+}
+/* 3D hover effects */
+.box:hover {
+  transform: scale(1.1);
+  /* transform:  
+      perspective(600px)
+      rotateX(20deg);
+    border-radius: 6px; */
+}
+
+/* todo, mindfulness, pomodoro */
+#todo,
+#mindfulness,
+#pomodoro {
+  border: none;
+  border-radius: 4rem;
+  max-height: 22rem;
+  background-color: var(--divBackgroundColor-1);
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
+  overflow-y: auto;
+}
+/* journal, habit tracker, exercise */
+#journal,
+#habit,
+#exercise {
+  border: none;
+  border-radius: 4rem;
+  max-height: 22rem;
+  background-color: var(--divBackgroundColor-2);
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
+  overflow-y: auto;
+}
+/*image adjustment */
+.box img {
+  position: absolute;
+  z-index: 1;
+  top: -6.2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 12rem;
+  height: 12rem;
+  border: none;
+  border-radius: 50%;
+}
+
+/* Button Stylling */
+.box button {
+  margin-top: 7.5rem;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background: none;
+  border: 0;
+  font-size: 2.4rem;
+  font-weight: 600;
+  color: var(--mainTextColor);
+  cursor: pointer;
+  transition: 0.3s;
+}
+.box button:hover {
+  color: var(--secondTextColor);
+}
+
+/* Description stylling */
+#todo p,
+#mindfulness p,
+#pomodoro p,
+#journal p,
+#habit p,
+#exercise p {
+  margin-top: 0.5rem;
+  font-size: 1.3rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  overflow-wrap: break-word;
+}
+#todo::-webkit-scrollbar,
+#mindfulness::-webkit-scrollbar,
+#pomodoro::-webkit-scrollbar,
+#journal::-webkit-scrollbar,
+#habit::-webkit-scrollbar,
+#exercise::-webkit-scrollbar {
+  display: none;
 }

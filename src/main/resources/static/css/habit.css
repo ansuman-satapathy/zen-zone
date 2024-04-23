@@ -87,7 +87,7 @@ button:hover {
 .habit.completed {
     text-decoration: line-through;
     opacity: 0.5; /* Optional: decrease opacity for completed todos */
-
+}
 /* Responsive Styles */
 @media (max-width: 600px) {
     main {
