@@ -28,9 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
             <p>Due Date: ${todo.dueDate}</p>
             <p>Priority: ${todo.priority}</p>
             <p>Category: ${todo.category}</p>
-            <button class="completeButton" data-id="${todo.id}" ${todo.completed ? 'disabled' : ''}><i class='bx bx-check-double'></i></button>
-            <button class="editButton" data-id="${todo.id}"><i class='bx bx-edit-alt'></i></button>
-            <button class="deleteButton" data-id="${todo.id}"><i class='bx bxs-message-square-x'></i></button>
+
         `;
         return todoElement;
     }
@@ -58,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function () {
         let method = 'POST';
         if (action === 'update') {
             const todoId = todoForm.getAttribute('data-id');
-            url = `/todo/${todoId}`;
+            url = /todo/${todoId};
             method = 'PUT';
         }
 
@@ -103,7 +101,7 @@ document.addEventListener('DOMContentLoaded', function () {
            document.querySelector('button[type="submit"]').textContent = 'Update Todo';
        } else if (event.target.classList.contains('completeButton')) {
            const todoId = event.target.dataset.id;
-           fetch(`/todo/${todoId}/complete`, {
+           fetch(/todo/${todoId}/complete, {
                method: 'POST'
            })
                .then(response => response.json())
@@ -112,7 +110,7 @@ document.addEventListener('DOMContentLoaded', function () {
                });
        } else if (event.target.classList.contains('deleteButton')) {
            const todoId = event.target.dataset.id;
-           fetch(`/todo/${todoId}`, {
+           fetch(/todo/${todoId}, {
                method: 'DELETE'
            })
                .then(response => {

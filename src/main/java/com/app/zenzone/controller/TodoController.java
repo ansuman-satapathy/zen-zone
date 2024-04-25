@@ -17,7 +17,7 @@ public class TodoController {
     @Autowired
     private TodoService todoService;
 
-    @GetMapping
+    @GetMapping("/")
     public List<Todo> getAllTodos() {
         return todoService.getAllTodos();
     }

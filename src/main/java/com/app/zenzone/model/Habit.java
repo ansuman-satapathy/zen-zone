@@ -14,7 +14,6 @@ public class Habit {
     private String description;
     private String streakGoal;
     private boolean completed;
-    
 
     public Long getId() {
         return id;
@@ -55,6 +54,5 @@ public class Habit {
     public void setCompleted(boolean completed) {
         this.completed = completed;
     }
-
 
 }
