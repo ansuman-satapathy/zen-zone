@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 fetchAndDisplayTodos();
                 todoForm.reset();
                 todoForm.removeAttribute('data-action');
-                document.querySelector('button[type="submit"]').textContent = 'Add Todo';
+                document.querySelector('button[type="submit"]').textContent = '+';
             });
     });
 
