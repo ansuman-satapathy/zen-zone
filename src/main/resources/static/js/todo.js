@@ -28,9 +28,9 @@ document.addEventListener('DOMContentLoaded', function () {
             <p>Due Date: ${todo.dueDate}</p>
             <p>Priority: ${todo.priority}</p>
             <p>Category: ${todo.category}</p>
-            <button class="completeButton" data-id="${todo.id}" ${todo.completed ? 'disabled' : ''}>Complete</button>
-            <button class="editButton" data-id="${todo.id}">Edit</button>
-            <button class="deleteButton" data-id="${todo.id}">Delete</button>
+            <button class="completeButton" data-id="${todo.id}" ${todo.completed ? 'disabled' : ''}><i class='bx bx-check-double'></i></button>
+            <button class="editButton" data-id="${todo.id}"><i class='bx bx-edit-alt'></i></button>
+            <button class="deleteButton" data-id="${todo.id}"><i class='bx bxs-message-square-x'></i></button>
         `;
         return todoElement;
     }
