@@ -3,29 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exercise Page</title>
+    <title>Exercise-Zone</title>
     <link rel="stylesheet" href="css/exercise.css"> <!-- Link to CSS file for styling -->
 </head>
 <body>
     <header>
-        <h1>Exercise Page</h1>
+        <h1>Exercise <span>Z</span>one</h1>
     </header>
-
+    <section>
     <div class="container">
+      
         <!-- Categories -->
         <div class="categories">
+            <button class="active" id="active"></button>
             <button id="stretch-btn">Stretch</button>
             <button id="hiit-btn">HIIT</button>
             <button id="yoga-btn">Yoga</button>
             <button id="strength-btn">Strength</button>
+            <div class="intial-icon" id="intial-icon">
+                <img src="assets/exercise/running-icon.png" alt="">
+                <h2>Move It or Lose It</h2>
+            </div>
+            <div class="intial-icon initial-hidden" id="intial-icon">
+                <img src="assets/exercise/running-icon.png" alt="">
+                <h2>Move It or Lose It</h2>
+            </div>
         </div>
-
+        
         <!-- Exercises -->
         <div class="exercises">
             <!-- Exercise content will be dynamically added here -->
         </div>
     </div>
-
-    <script src="js/exercise.js"></script> <!-- Link to JavaScript file for functionality -->
+    
+</section>
+    <!-- JavaScript file for functionality -->
+    <script src="js/exercise.js"></script> 
 </body>
 </html>
