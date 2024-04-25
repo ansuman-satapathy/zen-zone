@@ -1,55 +1,310 @@
 <!DOCTYPE html>
-<html
-  lang="en"
-  xmlns:th="https://www.thymeleaf.org"
-  th:replace="~{base::layout(~{::section})}"
->
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Index</title>
-  </head>
-  <body>
-    <section>
-        <!-- start navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="/">ZenZone</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/">Home</a>
-            </li>
-            <th:block th:if="${user==NULL}">
-              <li class="nav-item">
-                <a class="nav-link" href="register">Register</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="userlogin">Login</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="about">About Us</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="contact">Contact Us</a>
-            </th:block>
-          </ul>
+<html lang="en"> <!-- xmlns:th="https://www.thymeleaf.org" th:replace="~{base::layout(~{::section})}" -->
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ZenZone</title>
+  <!-- box-icons import -->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      text-decoration: none;
+      outline: none;
+      scroll-behavior: smooth;
+      font-family: "Poppins", sans-serif;
+    }
+
+    :root {
+
+
+      --mainBackgroundColor: #ffffff;
+      --secondBackground: #111b47;
+      --mainTextColor: #000000;
+      --mainStyleColor: #9d60ff;
+      --blurCircle-1: #d4d3ff;
+      --blurCircle-2: #c2e9ff;
+    }
+
+    /* Light Theme Added */
+    .lightTheme {
+      --mainBackgroundColor: #0a0f22;
+      --secondBackground: #5b5984;
+      --mainTextColor: #ffffff;
+      --mainStyleColor: #9d60ff;
+      --blurCircle-1: #29005c;
+      --blurCircle-2: #0f1e5f;
+
+    }
+
+    html {
+      font-size: 62%;
+      overflow-x: hidden;
+    }
+
+    body {
+      background: var(--mainBackgroundColor);
+      color: var(--mainTextColor);
+    }
+
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 1rem 9%;
+      background: transparent;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 100;
+      transition: 0.3s;
+    }
+
+    /* HnPSuite Logo Desingn on top-Left cornor */
+    .logo {
+      font-size: 2.5rem;
+      color: var(--mainTextColor);
+      font-weight: 700;
+    }
+
+    span {
+      color: var(--mainStyleColor);
+    }
+
+    /* Menu Icon Used For Mob/Tab View */
+    /* #menuIcon {
+      font-size: 3.5rem;
+      color: var(--mainTextColor);
+      cursor: pointer;
+      display: none;
+    } */
+
+    /* NavBar Styling */
+    nav a {
+      font-size: 1.5rem;
+      color: var(--mainTextColor);
+      font-weight: 500;
+      margin-left: 3.5rem;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--mainStyleColor);
+    }
+
+
+    nav i {
+      font-size: 1.5rem;
+      color: var(--mainTextColor);
+      margin-left: 4rem;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+
+    nav i:hover {
+      color: var(--mainStyleColor);
+    }
+
+    /* Home Page Styliing */
+    section {
+      max-height: 100vh;
+      padding: 10rem 9% 2rem;
+    }
+
+    .home {
+      display: flex;
+      align-items: center;
+      padding: 0 9%;
+    }
+
+    .blurCircle-1 {
+      position: absolute;
+      top: -8rem;
+      left: -8rem;
+      width: 45rem;
+      height: 45rem;
+      background-color: var(--blurCircle-1);
+      border-radius: 50%;
+      filter: blur(5rem);
+      z-index: -1;
+    }
+
+    .blurCircle-2 {
+      position: absolute;
+      bottom: 5rem;
+      right: 0;
+      width: 50rem;
+      height: 50rem;
+      background-color: var(--blurCircle-2);
+      border-radius: 50%;
+      filter: blur(8rem);
+      z-index: -1;
+    }
+
+    .container {
+      max-width: 60rem;
+    }
+
+    .container h1 {
+      font-size: 6.5rem;
+      margin-top: 15rem;
+      margin-left: -10rem;
+      font-weight: 600;
+      line-height: 1.3;
+    }
+
+    p {
+      font-size: 1.5rem;
+      margin: 2rem 0 3rem;
+      margin-left: -10rem;
+    }
+
+    /*Home Button Design */
+    .buttons {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      width: 30rem;
+      height: 5rem;
+      margin-left: -10rem;
+    }
+
+    /* Sign-Up Button*/
+    .buttons .signup {
+      position: relative;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 14rem;
+      height: 100%;
+      background: transparent;
+      border: 0.2rem solid var(--mainStyleColor);
+      border-radius: 1rem;
+      font-size: 1.7rem;
+      font-weight: 500;
+      letter-spacing: 0.1rem;
+      color: var(--mainStyleColor);
+      z-index: 1;
+      overflow: hidden;
+      transition: 0.3s;
+    }
+
+    .buttons .signup:hover {
+      transform: scale(1.2);
+      color: var(--mainBackgroundColor);
+    }
+
+    .buttons .signup::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 0;
+      height: 100%;
+      background: var(--mainStyleColor);
+      z-index: -1;
+      transition: 0.3s;
+    }
+
+    .buttons .signup:hover::before {
+      width: 100%;
+    }
+
+    /* Login Button */
+    .buttons .login {
+      position: relative;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 14rem;
+      height: 100%;
+      background: var(--mainStyleColor);
+      border: 0.2rem solid var(--mainStyleColor);
+      border-radius: 1rem;
+      font-size: 1.7rem;
+      font-weight: 500;
+      letter-spacing: 0.1rem;
+      color: var(--mainBackgroundColor);
+      z-index: 1;
+      overflow: hidden;
+      transition: 0.3s;
+    }
+
+    .buttons .login:hover {
+      transform: scale(1.2);
+      color: var(--mainStyleColor);
+    }
+
+    .buttons .login::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 0;
+      height: 100%;
+      background: var(--mainBackgroundColor);
+      z-index: -1;
+      transition: 0.3s;
+    }
+
+    .buttons .login:hover::before {
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <section>
+    <!-- Header and navBar Design -->
+    <header class="header">
+      <a href="/" class="logo">Zen<span>Z</span>one</a>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/about">About Us</a>
+        <a href="/contact">Contact Us</a>
+        <i class='bx bxs-moon' id="icon"></i>
+
+      </nav>
+    </header>
+    <!-- Home Page Design -->
+    <section class="home" id="home">
+      <div class="blurCircle-1"></div>
+      <div class="blurCircle-2"></div>
+
+      <div class="container">
+        <h1>Welcome To<br><span>Zen</span>Zone</h1>
+        <p>ZenZone is a web application designed to help users manage various aspects of their daily life, including
+          task
+          management, journaling, time management, habit tracking, mindfulness practice, and exercise.</p>
+
+        <div class="buttons">
+          <a href="/register" class="signup">SignUp</a>
+          <a href="/userlogin" class="login">LogIn</a>
         </div>
       </div>
-    </nav>
-    <!-- end navbar -->
-      <h1><center>Welcome to ZenZone</center></h1>
+      <!-- <div class="homeImage">
+        <img
+          src="https://github.com/ansuman-satapathy/zen-zone/blob/main/src/main/resources/static/assets/icons/Home-Image.png"
+          alt="homeImage" class="homeImage">
+      </div> -->
     </section>
-  </body>
+    <script>
+      var icon = document.getElementById("icon");
+      icon.onclick = function () {
+        document.body.classList.toggle("lightTheme");
+        if (document.body.classList.contains("lightTheme")) {
+          icon.className = "bx bxs-sun";
+        } else {
+          icon.className = "bx bxs-moon"
+        }
+      }
+    </script>
+</body>
+
 </html>

@@ -1,66 +1,482 @@
 <!DOCTYPE html>
-<html
-  lang="en"
-  xmlns:th="https://www.thymeleaf.org"
-  th:replace="~{base::layout(~{::section})}"
->
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-      crossorigin="anonymous"
-    />
-  </head>
-  <body>
-    <section>
-      <!-- start navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="/">ZenZone</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/">Home</a>
-            </li>
-            <th:block th:if="${user==NULL}">
-              <li class="nav-item">
-                <a class="nav-link" href="register">Register</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="userlogin">Login</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="about">About Us</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="contact">Contact Us</a>
-            </th:block>
-          </ul>
+<html lang="en"> <!-- xmlns:th="https://www.thymeleaf.org" th:replace="~{base::layout(~{::section})}"> -->
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login</title>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      text-decoration: none;
+      outline: none;
+      scroll-behavior: smooth;
+      font-family: "Poppins", sans-serif;
+    }
+
+    :root {
+
+
+      --mainBackgroundColor: #ffffff;
+      --secondBackground: #111b47;
+      --mainTextColor: #000000;
+      --mainStyleColor: #9d60ff;
+      --blurCircle-1: #d4d3ff;
+      --blurCircle-2: #c2e9ff;
+    }
+
+    html {
+      font-size: 62%;
+      overflow-x: hidden;
+    }
+
+    body {
+      background: var(--mainBackgroundColor);
+      color: var(--mainTextColor);
+    }
+
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 1rem 9%;
+      background: transparent;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 100;
+      transition: 0.3s;
+    }
+
+    /* HnPSuite Logo Desingn on top-Left cornor */
+    .logo {
+      font-size: 2.5rem;
+      color: var(--mainTextColor);
+      font-weight: 700;
+    }
+
+    span {
+      color: var(--mainStyleColor);
+    }
+
+
+
+    /* NavBar Styling */
+    nav a {
+      font-size: 1.5rem;
+      color: var(--mainTextColor);
+      font-weight: 500;
+      margin-left: 3.5rem;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--mainStyleColor);
+    }
+
+
+    nav i {
+      font-size: 1.5rem;
+      color: var(--mainTextColor);
+      margin-left: 4rem;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+
+    nav i:hover {
+      color: var(--mainStyleColor);
+    }
+
+    :root {
+      --background: #1a1a2e;
+      --color: #ffffff;
+      --primary-color: #0f3460;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      box-sizing: border-box;
+      font-family: "poppins";
+      background: var(--background);
+      color: var(--color);
+      letter-spacing: 1px;
+      transition: background 0.2s ease;
+      -webkit-transition: background 0.2s ease;
+      -moz-transition: background 0.2s ease;
+      -ms-transition: background 0.2s ease;
+      -o-transition: background 0.2s ease;
+    }
+
+    a {
+      text-decoration: none;
+      color: var(--color);
+    }
+
+    h1 {
+      font-size: 2.5rem;
+    }
+    h2{
+      padding-bottom: 1rem;
+    }
+    h3{
+      padding-top: 0.5rem;
+      padding-bottom: 1rem;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .login-container {
+      position: relative;
+      width: 80%;
+      margin-top: 0rem;
+      margin-left: 0rem;
+      max-height: 80vh;
+      
+    }
+    .description{
+      font-size: 14px;
+      
+    }
+
+    .form-container {
+      border: 1px solid hsla(0, 0%, 65%, 0.158);
+      box-shadow: 0 0 36px 1px rgba(0, 0, 0, 0.2);
+      border-radius: 10px;
+      backdrop-filter: blur(20px);
+      z-index: 99;
+      padding: 2rem;
+      -webkit-border-radius: 10px;
+      -moz-border-radius: 10px;
+      -ms-border-radius: 10px;
+      -o-border-radius: 10px;
+    }
+
+    .login-container form input {
+      display: block;
+      padding: 14.5px;
+      width: 100%;
+      margin: 2rem 0;
+      color: var(--color);
+      outline: none;
+      background-color: #9191911f;
+      border: none;
+      border-radius: 5px;
+      font-weight: 500;
+      letter-spacing: 0.8px;
+      font-size: 15px;
+      backdrop-filter: blur(15px);
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      -ms-border-radius: 5px;
+      -o-border-radius: 5px;
+    }
+
+    .login-container form input:focus {
+      box-shadow: 0 0 16px 1px rgba(0, 0, 0, 0.2);
+      animation: wobble 0.3s ease-in;
+      -webkit-animation: wobble 0.3s ease-in;
+    }
+
+    .login-container form button {
+      background-color: var(--primary-color);
+      color: var(--color);
+      display: block;
+      padding: 13px;
+      border-radius: 5px;
+      outline: none;
+      font-size: 18px;
+      letter-spacing: 1.5px;
+      font-weight: bold;
+      width: 100%;
+      cursor: pointer;
+      margin-bottom: 10rem;
+      transition: all 0.1s ease-in-out;
+      border: none;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      -ms-border-radius: 5px;
+      -o-border-radius: 5px;
+      -webkit-transition: all 0.1s ease-in-out;
+      -moz-transition: all 0.1s ease-in-out;
+      -ms-transition: all 0.1s ease-in-out;
+      -o-transition: all 0.1s ease-in-out;
+    }
+
+    .login-container form button:hover {
+      box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.15);
+      transform: scale(1.02);
+      -webkit-transform: scale(1.02);
+      -moz-transform: scale(1.02);
+      -ms-transform: scale(1.02);
+      -o-transform: scale(1.02);
+    }
+
+    .circle {
+      width: 8rem;
+      height: 8rem;
+      background: var(--primary-color);
+      border-radius: 50%;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      -ms-border-radius: 50%;
+      -o-border-radius: 50%;
+      position: absolute;
+    }
+
+    .illustration {
+      position: absolute;
+      top: -14%;
+      right: -2px;
+      width: 90%;
+    }
+
+    .circle-one {
+      top: 4rem ;
+      left: 0;
+      backdrop-filter: blur(10px);
+      z-index: -1;
+      transform: translate(-45%, -45%);
+      -webkit-transform: translate(-45%, -45%);
+      -moz-transform: translate(-45%, -45%);
+      -ms-transform: translate(-45%, -45%);
+      -o-transform: translate(-45%, -45%);
+    }
+
+    .circle-two {
+      bottom: 3rem;
+      right: 2rem;
+      z-index: -1;
+      transform: translate(45%, 45%);
+      -webkit-transform: translate(45%, 45%);
+      -moz-transform: translate(45%, 45%);
+      -ms-transform: translate(45%, 45%);
+      -o-transform: translate(45%, 45%);
+    }
+
+    .register-forget {
+      margin: 1rem 0;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .opacity {
+      opacity: 0.6;
+      text-align: center;
+      padding: 3rem;
+      margin-top: -6rem;
+    }
+
+    .theme-btn-container {
+      position: absolute;
+      left: 0;
+      bottom: 2rem;
+    }
+
+    .theme-btn {
+      cursor: pointer;
+      transition: all 0.3s ease-in;
+    }
+
+    .theme-btn:hover {
+      width: 40px !important;
+    }
+
+    @keyframes wobble {
+      0% {
+        transform: scale(1.025);
+        -webkit-transform: scale(1.025);
+        -moz-transform: scale(1.025);
+        -ms-transform: scale(1.025);
+        -o-transform: scale(1.025);
+      }
+
+      25% {
+        transform: scale(1);
+        -webkit-transform: scale(1);
+        -moz-transform: scale(1);
+        -ms-transform: scale(1);
+        -o-transform: scale(1);
+      }
+
+      75% {
+        transform: scale(1.025);
+        -webkit-transform: scale(1.025);
+        -moz-transform: scale(1.025);
+        -ms-transform: scale(1.025);
+        -o-transform: scale(1.025);
+      }
+
+      100% {
+        transform: scale(1);
+        -webkit-transform: scale(1);
+        -moz-transform: scale(1);
+        -ms-transform: scale(1);
+        -o-transform: scale(1);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <section class="vh-100">
+    <!-- Header and navBar Design -->
+    <header class="header">
+      <a href="/" class="logo">Zen<span>Z</span>one</a>
+      <!-- <div class='bx bx-menu' id="menuIcon"></div> bx bx-menu is id for menu icon(from box-icon) -->
+
+      <nav>
+        <a href="/">Home</a>
+        <a href="/about">About Us</a>
+        <a href="/contact">Contact Us</a>
+        <!-- <i class='bx bxs-moon' id="icon"></i> -->
+
+      </nav>
+    </header>
+
+    <!-- <div class="container py-5 h-100">
+      <div class="row d-flex align-items-center justify-content-center h-100">
+        <div class="col-md-8 col-lg-7 col-xl-6">
+          <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg" class="img-fluid"
+            alt="Phone image" />
+        </div>
+        <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+          <div>
+            <th:block th:if="${param.error}">
+              <p class="text-center text-danger">Invalid Credentials</p>
+              </th:>
+          </div>
+          <p class="h1 fw-bold">Login</p>
+          <form action="/login" method="post">
+            <div data-mdb-input-init class="form-outline mb-4">
+              <input type="email" class="form-control form-control-lg" name="username" />
+              <label class="form-label">Email address</label>
+            </div>
+            <div data-mdb-input-init class="form-outline mb-4">
+              <input type="password" class="form-control form-control-lg" name="password" />
+              <label class="form-label">Password</label>
+            </div>
+            <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary">
+              Sign in
+            </button>
+            <div>
+              <p class="small fw-bold mt-2 pt-1 mb-0">
+                Don't have an account?
+                <a href="/register" class="link-danger">Sign Up</a>
+              </p>
+            </div>
+
+          </form>
         </div>
       </div>
-    </nav>
-    <!-- end navbar -->
-      <h1><center>About us</center></h1>
-    </section>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+    </div> -->
+
+    <body>
+      <section class="container">
+        <div class="login-container">
+          <div class="circle circle-one"></div>
+          <h1 class="opacity">ABOUT US</h1>
+          <div class="description">
+            <p>
+
+<h2>ZenZone: Personal Health and Productivity Suite.</h2>
+
+ZenZone is a web application designed to help users manage various aspects of their daily life, including task management, journaling, time management, habit tracking, mindfulness practice, and exercise. The aim of the application is to provide users with a centralized platform where they can organize their tasks, track their progress, and cultivate healthy habits to enhance their productivity and well-being.
+Key Features:
+
+    <h3>Todo List:</h3> Allows users to create, update, and delete tasks, set priorities, deadlines, and categorize tasks for better organization.
+
+    <h3>Journal:</h3> Provides a space for users to jot down their thoughts, ideas, and reflections, facilitating self-reflection and personal growth.
+
+    <h3>Pomodoro Timer:</h3> Offers a timer based on the Pomodoro Technique, helping users to break their work into focused intervals followed by short breaks, enhancing productivity and focus.
+
+  <h3>Habit Tracker:</h3> Enables users to establish and track habits over time, encouraging consistency and accountability in their routines.
+
+<h3>Mindfulness Practice:</h3> Offers mindfulness timer with soothing background music to help users reduce stress, improve concentration, and foster a sense of calm and balance.
+
+<h3>Exercise Guide:</h3> Visual guide for different types of physical exercises, starting from yoga, HIIT to strength training.
+
+                        </p>
+          </div>
+          <div class="circle circle-two"></div>
+        </div>
+        <div class="theme-btn-container"></div>
+      </section>
+    </body>
+  </section>
+  <script>
+
+    const themes = [
+      {
+        background: "#1A1A2E",
+        color: "#FFFFFF",
+        primaryColor: "#0F3460"
+      },
+      {
+        background: "#461220",
+        color: "#FFFFFF",
+        primaryColor: "#E94560"
+      },
+      {
+        background: "#192A51",
+        color: "#FFFFFF",
+        primaryColor: "#967AA1"
+      },
+      {
+        background: "#F7B267",
+        color: "#000000",
+        primaryColor: "#F4845F"
+      },
+      {
+        background: "#F25F5C",
+        color: "#000000",
+        primaryColor: "#642B36"
+      },
+      {
+        background: "#231F20",
+        color: "#FFF",
+        primaryColor: "#BB4430"
+      }
+    ];
+
+    const setTheme = (theme) => {
+      const root = document.querySelector(":root");
+      root.style.setProperty("--background", theme.background);
+      root.style.setProperty("--color", theme.color);
+      root.style.setProperty("--primary-color", theme.primaryColor);
+      root.style.setProperty("--glass-color", theme.glassColor);
+    };
+
+    const displayThemeButtons = () => {
+      const btnContainer = document.querySelector(".theme-btn-container");
+      themes.forEach((theme) => {
+        const div = document.createElement("div");
+        div.className = "theme-btn";
+        div.style.cssText = `background: ${theme.background}; width: 25px; height: 25px`;
+        btnContainer.appendChild(div);
+        div.addEventListener("click", () => setTheme(theme));
+      });
+    };
+
+    displayThemeButtons();
+  </script>
+</body>
+
 </html>
