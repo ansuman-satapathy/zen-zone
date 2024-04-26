@@ -60,7 +60,7 @@ public class HomeController {
 
     @GetMapping("/invalid")
     public String error() {
-        return "error";
+        return "invalid";
     }
 
     @GetMapping("/userlogout")
@@ -78,6 +78,6 @@ public class HomeController {
         } else {
             session.setAttribute("msg", "Something went wrong");
         }
-        return "redirect:/userlogin";
+        return "redirect:/register";
     }
 }

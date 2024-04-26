@@ -92,11 +92,35 @@
       color: var(--mainStyleColor);
     }
 
+    .blurCircle-1 {
+      position: absolute;
+      top: -8rem;
+      left: -8rem;
+      width: 45rem;
+      height: 45rem;
+      background-color: var(--blurCircle-1);
+      border-radius: 50%;
+      filter: blur(5rem);
+      z-index: -1;
+    }
+
+    .blurCircle-2 {
+      position: absolute;
+      bottom: 5rem;
+      right: 0;
+      width: 50rem;
+      height: 50rem;
+      background-color: var(--blurCircle-2);
+      border-radius: 50%;
+      filter: blur(8rem);
+      z-index: -1;
+    }
+
     :root {
-    --background: #ffffff;
-    --color: #000000;
-    --primary-color: #F4845F;
-}
+      --background: #ffffff;
+      --color: #000000;
+      --primary-color: #9d60ff;
+    }
 
     * {
       box-sizing: border-box;
@@ -127,11 +151,14 @@
 
     h1 {
       font-size: 2.5rem;
+      color: #7834e4;
     }
-    h2{
+
+    h2 {
       padding-bottom: 1rem;
     }
-    h3{
+
+    h3 {
       padding-top: 0.5rem;
       padding-bottom: 1rem;
     }
@@ -149,12 +176,13 @@
       margin-top: 0rem;
       margin-left: 0rem;
       max-height: 80vh;
-      
+
     }
-    .description{
+
+    .description {
       font-size: 14px;
       padding-left: 5rem;
-      
+
     }
 
     .form-container {
@@ -250,7 +278,7 @@
     }
 
     .circle-one {
-      top: 4rem ;
+      top: 4rem;
       left: 0;
       backdrop-filter: blur(10px);
       z-index: -1;
@@ -283,6 +311,7 @@
       text-align: center;
       padding: 3rem;
       margin-top: -6rem;
+      /* background-color: #9d60ff; */
     }
 
     .theme-btn-container {
@@ -351,96 +380,48 @@
 
       </nav>
     </header>
+    <section class="container">
+      <div class="blurCircle-1"></div>
+      <div class="blurCircle-2"></div>
+      <div class="login-container">
+        <!-- <div class="circle circle-one"></div> -->
+        <h1 class="opacity background-color=">ABOUT US</h1>
+        <div class="description">
+          <p>
 
-    <body>
-      <section class="container">
-        <div class="login-container">
-          <div class="circle circle-one"></div>
-          <h1 class="opacity">ABOUT US</h1>
-          <div class="description">
-            <p>
+          <h2>ZenZone: Personal Health and Productivity Suite.</h2>
 
-<h2>ZenZone: Personal Health and Productivity Suite.</h2>
+          ZenZone is a web application designed to help users manage various aspects of their daily life, including
+          task management, journaling, time management, habit tracking, mindfulness practice, and exercise. The aim of
+          the application is to provide users with a centralized platform where they can organize their tasks, track
+          their progress, and cultivate healthy habits to enhance their productivity and well-being.
+          Key features of ZenZone are:
 
-ZenZone is a web application designed to help users manage various aspects of their daily life, including task management, journaling, time management, habit tracking, mindfulness practice, and exercise. The aim of the application is to provide users with a centralized platform where they can organize their tasks, track their progress, and cultivate healthy habits to enhance their productivity and well-being.
-Key features of ZenZone are:
+          <h3>Todo List:</h3> Allows users to create, update, and delete tasks, set priorities, deadlines, and
+          categorize tasks for better organization.
 
-    <h3>Todo List:</h3> Allows users to create, update, and delete tasks, set priorities, deadlines, and categorize tasks for better organization.
+          <h3>Journal:</h3> Provides a space for users to jot down their thoughts, ideas, and reflections,
+          facilitating self-reflection and personal growth.
 
-    <h3>Journal:</h3> Provides a space for users to jot down their thoughts, ideas, and reflections, facilitating self-reflection and personal growth.
+          <h3>Pomodoro Timer:</h3> Offers a timer based on the Pomodoro Technique, helping users to break their work
+          into focused intervals followed by short breaks, enhancing productivity and focus.
 
-    <h3>Pomodoro Timer:</h3> Offers a timer based on the Pomodoro Technique, helping users to break their work into focused intervals followed by short breaks, enhancing productivity and focus.
+          <h3>Habit Tracker:</h3> Enables users to establish and track habits over time, encouraging consistency and
+          accountability in their routines.
 
-  <h3>Habit Tracker:</h3> Enables users to establish and track habits over time, encouraging consistency and accountability in their routines.
+          <h3>Mindfulness Practice:</h3> Offers mindfulness timer with soothing background music to help users reduce
+          stress, improve concentration, and foster a sense of calm and balance.
 
-<h3>Mindfulness Practice:</h3> Offers mindfulness timer with soothing background music to help users reduce stress, improve concentration, and foster a sense of calm and balance.
+          <h3>Exercise Guide:</h3> Visual guide for different types of physical exercises, starting from yoga, HIIT to
+          strength training.
 
-<h3>Exercise Guide:</h3> Visual guide for different types of physical exercises, starting from yoga, HIIT to strength training.
-
-                        </p>
-          </div>
-          <div class="circle circle-two"></div>
+          </p>
         </div>
-        <!-- <div class="theme-btn-container"></div> -->
-      </section>
-    </body>
+        <!-- <div class="circle circle-two"></div> -->
+      </div>
+      <!-- <div class="theme-btn-container"></div> -->
+    </section>
   </section>
-  <script>
-
-    const themes = [
-      {
-        background: "#1A1A2E",
-        color: "#FFFFFF",
-        primaryColor: "#0F3460"
-      },
-      {
-        background: "#461220",
-        color: "#FFFFFF",
-        primaryColor: "#E94560"
-      },
-      {
-        background: "#192A51",
-        color: "#FFFFFF",
-        primaryColor: "#967AA1"
-      },
-      {
-        background: "#F7B267",
-        color: "#000000",
-        primaryColor: "#F4845F"
-      },
-      {
-        background: "#F25F5C",
-        color: "#000000",
-        primaryColor: "#642B36"
-      },
-      {
-        background: "#231F20",
-        color: "#FFF",
-        primaryColor: "#BB4430"
-      }
-    ];
-
-    const setTheme = (theme) => {
-      const root = document.querySelector(":root");
-      root.style.setProperty("--background", theme.background);
-      root.style.setProperty("--color", theme.color);
-      root.style.setProperty("--primary-color", theme.primaryColor);
-      root.style.setProperty("--glass-color", theme.glassColor);
-    };
-
-    const displayThemeButtons = () => {
-      const btnContainer = document.querySelector(".theme-btn-container");
-      themes.forEach((theme) => {
-        const div = document.createElement("div");
-        div.className = "theme-btn";
-        div.style.cssText = `background: ${theme.background}; width: 25px; height: 25px`;
-        btnContainer.appendChild(div);
-        div.addEventListener("click", () => setTheme(theme));
-      });
-    };
-
-    displayThemeButtons();
-  </script>
 </body>
 
 </html>

@@ -42,6 +42,7 @@ public class SecurityConfig {
                     try {
                         login.loginPage("/userlogin").loginProcessingUrl("/login")
                                 .defaultSuccessUrl("/dashboard.html").permitAll()
+                                .failureUrl("/invalid")
                                 .and()
                                 .logout(logout -> logout.logoutSuccessUrl("/userlogout").logoutUrl("/logout")
                                         .permitAll());

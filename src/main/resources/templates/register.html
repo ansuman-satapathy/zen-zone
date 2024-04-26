@@ -92,10 +92,35 @@
             color: var(--mainStyleColor);
         }
 
+        .blurCircle-1 {
+            position: absolute;
+            top: -8rem;
+            left: -8rem;
+            width: 45rem;
+            height: 45rem;
+            background-color: var(--blurCircle-1);
+            border-radius: 50%;
+            filter: blur(5rem);
+            z-index: -1;
+        }
+
+        .blurCircle-2 {
+            position: absolute;
+            bottom: 5rem;
+            right: 0;
+            width: 50rem;
+            height: 50rem;
+            background-color: var(--blurCircle-2);
+            border-radius: 50%;
+            filter: blur(8rem);
+            z-index: -1;
+        }
+
+        /* Template */
         :root {
             --background: #ffffff;
             --color: #000000;
-            --primary-color: #F4845F;
+            --primary-color: #9d60ff;
         }
 
         * {
@@ -138,7 +163,7 @@
 
         .login-container {
             position: relative;
-            width: 35rem;
+            width: 50rem;
 
         }
 
@@ -266,21 +291,6 @@
             opacity: 0.6;
         }
 
-        .theme-btn-container {
-            position: absolute;
-            left: 0;
-            bottom: 2rem;
-        }
-
-        .theme-btn {
-            cursor: pointer;
-            transition: all 0.3s ease-in;
-        }
-
-        .theme-btn:hover {
-            width: 40px !important;
-        }
-
         @keyframes wobble {
             0% {
                 transform: scale(1.025);
@@ -333,104 +343,68 @@
             </nav>
         </header>
 
-        <body>
-            <section class="container">
-                <div class="login-container">
-                    <div class="circle circle-one"></div>
-                    <div class="form-container">
-                        <img src="https://raw.githubusercontent.com/hicodersofficial/glassmorphism-login-form/master/assets/illustration.png"
-                            alt="illustration" class="illustration" />
-                        <h1 class="opacity">SIGN UP</h1>
-                        <form action="/saveUser" method="post">
-                            <input type="text" placeholder=" FULL NAME" name="name" />
-                            <input type="email" placeholder="EMAIL" name="email" />
-                            <input type="password" placeholder="PASSWORD" name="password" />
-                            <button class="opacity">REGISTER</button>
-                        </form>
-                        <div class="register-forget opacity">
-                            <p> Already have an account?</p>
-                            <a href="/userlogin">LOGIN</a>
-                        </div>
+        <section class="container">
+            <div class="blurCircle-1"></div>
+            <div class="blurCircle-2"></div>
+            <div class="login-container">
+                <div class="circle circle-one"></div>
+                <div class="form-container">
+                    <!-- <img src="https://raw.githubusercontent.com/hicodersofficial/glassmorphism-login-form/master/assets/illustration.png"
+                            alt="illustration" class="illustration" /> -->
+                    <h1 class="opacity">SIGN UP</h1>
+                    <form action="/saveUser" method="post">
+                        <input type="text" placeholder=" FULL NAME" name="name" />
+                        <input type="email" placeholder="EMAIL" name="email" />
+                        <input type="password" placeholder="PASSWORD" name="password" />
+                        <button class="opacity">REGISTER</button>
+                    </form>
+                    <div class="register-forget opacity">
+                        <p> Already have an account?</p>
+                        <a href="/userlogin">LOGIN</a>
                     </div>
-                    <div class="circle circle-two"></div>
                 </div>
-                <!-- 
-                 -->
-            </section>
-            <div id="successPopup" class="popup d-none">
-                <p class="popup-message">Registration successful!</p>
+                <div class="circle circle-two"></div>
             </div>
-        </body>
+        </section>
     </section>
     <script>
-        function registerUser(event) {
-            event.preventDefault();
-            // Simulate successful registration
-            setTimeout(function () {
-                // Display popup message
-                var popup = document.getElementById("successPopup");
-                popup.classList.remove("d-none");
-                // Close popup after 1 second
-                setTimeout(function () {
-                    popup.classList.add("d-none");
-                }, 1000);
-            }, 1000);
-        }
+        document.addEventListener('DOMContentLoaded', function () {
+            // Function to show the success popup
+            const showSuccessPopup = () => {
+                const successPopup = document.createElement('div');
+                successPopup.classList.add('popup');
+                successPopup.innerHTML = '<p class="popup-message">Registration successful! Please log in.</p>';
+                document.querySelector('.form-container').appendChild(successPopup);
+            };
 
-        const themes = [
-            {
-                background: "#1A1A2E",
-                color: "#FFFFFF",
-                primaryColor: "#0F3460"
-            },
-            {
-                background: "#461220",
-                color: "#FFFFFF",
-                primaryColor: "#E94560"
-            },
-            {
-                background: "#192A51",
-                color: "#FFFFFF",
-                primaryColor: "#967AA1"
-            },
-            {
-                background: "#F7B267",
-                color: "#000000",
-                primaryColor: "#F4845F"
-            },
-            {
-                background: "#F25F5C",
-                color: "#000000",
-                primaryColor: "#642B36"
-            },
-            {
-                background: "#231F20",
-                color: "#FFF",
-                primaryColor: "#BB4430"
+            // Event listener for form submission
+            const form = document.querySelector('form');
+            if (form) {
+                form.addEventListener('submit', (event) => {
+                    event.preventDefault(); // Prevent default form submission
+                    const formData = new FormData(form);
+                    fetch('/saveUser', {
+                        method: 'POST',
+                        body: formData
+                    })
+                        .then(response => {
+                            if (response.ok) {
+                                showSuccessPopup(); // Show success message if the response is OK
+                            } else {
+                                throw new Error('Registration failed');
+                            }
+                        })
+                        .catch(error => {
+                            console.error('Error:', error);
+                            // Handle error (e.g., display error message to the user)
+                        });
+                });
             }
-        ];
-
-        const setTheme = (theme) => {
-            const root = document.querySelector(":root");
-            root.style.setProperty("--background", theme.background);
-            root.style.setProperty("--color", theme.color);
-            root.style.setProperty("--primary-color", theme.primaryColor);
-            root.style.setProperty("--glass-color", theme.glassColor);
-        };
-
-        const displayThemeButtons = () => {
-            const btnContainer = document.querySelector(".theme-btn-container");
-            themes.forEach((theme) => {
-                const div = document.createElement("div");
-                div.className = "theme-btn";
-                div.style.cssText = `background: ${theme.background}; width: 25px; height: 25px`;
-                btnContainer.appendChild(div);
-                div.addEventListener("click", () => setTheme(theme));
-            });
-        };
-
-        displayThemeButtons();
+        });
     </script>
+
+
+
 </body>
 
 </html>
