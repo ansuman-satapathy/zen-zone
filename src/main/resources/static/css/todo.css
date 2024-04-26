@@ -1,78 +1,188 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+/* importing Poppins (sans-serif) font from googlr fonts */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  scroll-behavior: smooth;
+  font-family: "Poppins", sans-serif;
 }
+
+/* Color schemes */
+:root {
+  --mainBackgroundColor: #e9f0ff;
+  --headerColor: #101921;
+  --headerTextColor: #d6d4f9;
+  --textColor: #020025;
+  --spanColor: #de60f8;
+  --divBackgroundColor: #ececec;
+  --addbuttonColor: #4cc2ff;
+  --buttonHovereColor: #3587b2;
+  --blurCircle-1: #b6b5ff;
+  --blurCircle-2: #fea5ff;
+}
+
+html {
+  font-size: 62%;
+  overflow-x: hidden;
+}
+
+/* Body styles */
+body {
+  background-color: var(--mainBackgroundColor);
+  color: var(--textColor);
+}
+
+/* Header styles */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem 9%;
+  background: var(--headerColor);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+/* Exercise-zone stylling */
+h1 {
+  font-size: 3rem;
+  color: var(--headerTextColor);
+  font-weight: 800;
+  text-align: center;
+  margin-left: 51rem;
+}
+span {
+  font-size: 3.5rem;
+  color: var(--spanColor);
+}
+
+header a {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: var(--headerTextColor);
+  text-decoration: none;
+  transition: 0.4s ease;
+}
+header a:hover {
+  transform: scale(1.2);
+  color: var(--spanColor);
+}
+
+section {
+  max-height: 100vh;
+  padding: 7rem;
+}
+
+.blurCircle-1 {
+    position: absolute;
+    top: -8rem;
+    left: -8rem;
+    width: 45rem;
+    height: 45rem;
+    background-color: var(--blurCircle-1);
+    border-radius: 50%;
+    filter: blur(5rem);
+    z-index: -1;
+  }
+  .blurCircle-2 {
+    position: absolute;
+    bottom: 5rem;
+    right: 0;
+    width: 50rem;
+    height: 50rem;
+    background-color: var(--blurCircle-2);
+    border-radius: 50%;
+    filter: blur(8rem);
+    z-index: -1;
+  }
 
 .container {
-    max-width: 800px;
-    margin: 50px auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    background-color: #f9f9f9;
+    width: 45%;
+    height: 80vh; 
+    margin: 2.7rem auto;
+    background-color: rgba(236, 236, 236, 0.8);
+    padding: 2rem;
+    border-radius: 4rem;
+    overflow-y: hidden;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); 
 }
 
-h1 {
-    text-align: center;
-    margin-bottom: 20px;
-}
 
-form {
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 20px;
-}
 
-form input, form button {
-    margin: 5px;
-    padding: 8px;
-    font-size: 16px;
-}
 
-form input[type="date"] {
-    width: calc(50% - 20px);
-}
-
-form input[type="number"] {
-    width: calc(50% - 20px);
-}
-
-#todosContainer {
-    margin-top: 20px;
-}
-
-.todo {
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 10px;
-    margin-bottom: 10px;
-    background-color: #fff;
-}
-
-.todo h3 {
-    margin-top: 0;
-}
-
-.todo button {
-    margin-left: 10px;
-    padding: 5px 10px;
-    font-size: 14px;
+  
+/* styling for submit button  */
+#addButton {
+    position: relative;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    margin: 2rem auto; 
+    width: 5rem;
+    height: 5rem;
+    background: var(--addbuttonColor);
+    border: none;
+    border-radius: 50%;
+    padding: 2rem;
+    font-size: 4rem;
+    font-weight: 600;
+    color: var(--textColor);
     cursor: pointer;
+    overflow: hidden;
+    transition: 0.3s;
 }
 
-.completeButton {
-    background-color: #4caf50;
-    color: #fff;
-    border: none;
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.deleteButton {
-    background-color: #f44336;
-    color: #fff;
+.form input {
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
     border: none;
+    border-radius: 4rem;
+    padding: 1rem;
+    box-sizing: border-box;
 }
+
+.todosContainer{
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 4rem;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+/* Add additional styles as needed */
+
+
+
+/* .completeButton {
+    display: flex;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+}  */
+
+/* .deleteButton {
+    display: flex;
+  background-color: #f44336;
+  color: #fff;
+  border: none;
+} */
 .completed {
-    text-decoration: line-through;
-    opacity: 0.5; /* Optional: decrease opacity for completed todos */
+  text-decoration: line-through;
+  opacity: 0.5; 
 }

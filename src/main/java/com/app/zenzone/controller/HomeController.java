@@ -78,6 +78,6 @@ public class HomeController {
         } else {
             session.setAttribute("msg", "Something went wrong");
         }
-        return "redirect:/register";
+        return "redirect:/userlogin";
     }
 }

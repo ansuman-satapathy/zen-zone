@@ -5,20 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo List</title>
     <link rel="stylesheet" href="css/todo.css">
+
+     <!-- box-icons import -->
+     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
-<div class="container">
-    <h1>Todo List</h1>
-    <form id="todoForm">
-        <input type="text" id="titleInput" placeholder="Title" required>
-        <input type="text" id="descriptionInput" placeholder="Description">
-        <input type="date" id="dueDateInput">
-        <input type="number" id="priorityInput" placeholder="Priority" min="1" max="10" required>
-        <input type="text" id="categoryInput" placeholder="Category">
-        <button type="submit">Add Todo</button>
-    </form>
-    <div id="todosContainer"></div>
-</div>
+    <header>
+        <h1>ToDo <span>L</span>ist</h1>
+        <a href="dashboard.html">Dashboard</a>
+    </header>
+    <section>
+        <div class="blurCircle-1"></div>
+        <div class="blurCircle-2"></div>
+
+
+        <div class="container">
+            <div class="form">
+                <form id="todoForm">
+                    <input type="text" id="titleInput" placeholder="Title" required>
+                    <input type="text" id="descriptionInput" placeholder="Description">
+                    <input type="date" id="dueDateInput">
+                    <input type="number" id="priorityInput" placeholder="Priority" min="1" max="10" required>
+                    <input type="text" id="categoryInput" placeholder="Category">
+            </div>
+
+                <div class="addButton">
+                    <button type="submit" id="addButton">+</button>
+                </div>
+            </form>
+            
+            <div id="todosContainer"></div>
+        </div>
+    </section>
 
 <script src="js/todo.js"></script>
 </body>
