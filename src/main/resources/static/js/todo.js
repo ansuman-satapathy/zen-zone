@@ -4,14 +4,26 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Function to fetch all todos and display them
     function fetchAndDisplayTodos() {
-        fetch(`/todo`)
-            .then(response => response.json())
+        fetch('/todo/')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Failed to fetch todos');
+                }
+                return response.json();
+            })
             .then(todos => {
+                if (!Array.isArray(todos)) {
+                    throw new Error('Todos is not an array');
+                }
                 todosContainer.innerHTML = '';
                 todos.forEach(todo => {
                     const todoElement = createTodoElement(todo);
                     todosContainer.appendChild(todoElement);
                 });
+            })
+            .catch(error => {
+                console.error('Error fetching todos:', error);
+                // Handle the error (e.g., display a message to the user)
             });
     }
 
