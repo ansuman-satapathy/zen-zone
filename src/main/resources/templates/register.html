@@ -148,6 +148,11 @@
         a {
             text-decoration: none;
             color: var(--color);
+            font-size: 1.2rem;
+        }
+
+        p {
+            font-size: 1.2rem;
         }
 
         h1 {
@@ -373,7 +378,7 @@
             const showSuccessPopup = () => {
                 const successPopup = document.createElement('div');
                 successPopup.classList.add('popup');
-                successPopup.innerHTML = '<p class="popup-message">Registration successful! Please log in.</p>';
+                successPopup.innerHTML = '<p>Registration successful!!! <a href="/userlogin">Please Login...</a></p>';
                 document.querySelector('.form-container').appendChild(successPopup);
             };
 

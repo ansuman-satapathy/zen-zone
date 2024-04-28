@@ -14,6 +14,7 @@ import com.app.zenzone.repository.UserRepository;
 import com.app.zenzone.service.UserService;
 
 import jakarta.servlet.http.HttpSession;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class HomeController {
@@ -36,6 +37,11 @@ public class HomeController {
     @GetMapping("/")
     public String index() {
         return "index";
+    }
+
+    @GetMapping("/home")
+    public String home() {
+        return "home";
     }
 
     @GetMapping("/about")

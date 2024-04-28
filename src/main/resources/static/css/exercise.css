@@ -9,6 +9,7 @@
   text-decoration: none;
   outline: none;
   scroll-behavior: smooth;
+  scrollbar-width: none;
   font-family: "Poppins", sans-serif;
 }
 
@@ -26,7 +27,7 @@
 
 html {
   font-size: 62%;
-  /* overflow-x: hidden; */
+  overflow-x: hidden;
 }
 
 /* Body styles */
@@ -89,7 +90,7 @@ section {
   background-color: var(--divBackgroundColor);
   border-radius: 8px;
   padding: 20px;
-  /* overflow-y: hidden; */
+  overflow-y: hidden;
 }
 .container h2 {
   color: var(--textColor);
