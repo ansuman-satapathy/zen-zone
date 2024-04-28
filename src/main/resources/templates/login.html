@@ -146,7 +146,7 @@
 
     a {
       text-decoration: none;
-      color: var(--color);
+      color: #9d60ff;
       font-size: 1.2rem;
     }
     
@@ -329,7 +329,7 @@
     }
   </style>
 </head>
-
+<body>
 <section class="vh-100">
   <!-- Header and navBar Design -->
   <header class="header">
@@ -349,11 +349,11 @@
         <!-- <img
             src="https://github.com/ansuman-satapathy/zen-zone/blob/a5590edd3d005fc8844b65676d2f372dbf63020c/src/main/resources/static/assets/icons/Illustration.png"
             alt="illustration" class="illustration" /> -->
-        <h1 class="opacity">LOGIN</h1>
+        <h1 class="opacity">SIGN IN</h1>
         <form action="/login" method="post">
-          <input type="text" placeholder="USERNAME" name="username" />
-          <input type="password" placeholder="PASSWORD" name="password" />
-          <button class="opacity">SUBMIT</button>
+          <input type="text" placeholder="EMAIL" name="username" required>
+          <input type="password" placeholder="PASSWORD" name="password" required />
+          <button class="opacity">LOGIN</button>
         </form>
         <div class="register-forget opacity">
           <p> Don't have an account?</p>

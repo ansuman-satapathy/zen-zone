@@ -147,7 +147,7 @@
 
         a {
             text-decoration: none;
-            color: var(--color);
+            color: #9d60ff;
             font-size: 1.2rem;
         }
 
@@ -358,9 +358,9 @@
                             alt="illustration" class="illustration" /> -->
                     <h1 class="opacity">SIGN UP</h1>
                     <form action="/saveUser" method="post">
-                        <input type="text" placeholder=" FULL NAME" name="name" />
-                        <input type="email" placeholder="EMAIL" name="email" />
-                        <input type="password" placeholder="PASSWORD" name="password" />
+                        <input type="text" placeholder=" FULL NAME" name="name" required />
+                        <input type="email" placeholder="EMAIL" name="email" required />
+                        <input type="password" placeholder="PASSWORD" name="password" required />
                         <button class="opacity">REGISTER</button>
                     </form>
                     <div class="register-forget opacity">
@@ -372,14 +372,15 @@
             </div>
         </section>
     </section>
+
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            // Function to show the success popup
-            const showSuccessPopup = () => {
-                const successPopup = document.createElement('div');
-                successPopup.classList.add('popup');
-                successPopup.innerHTML = '<p>Registration successful!!! <a href="/userlogin">Please Login...</a></p>';
-                document.querySelector('.form-container').appendChild(successPopup);
+            // Function to show the success message
+            const showSuccessMessage = () => {
+                const successMessage = document.createElement('div');
+                successMessage.classList.add('success-message');
+                successMessage.innerHTML = '<p>Registration Successful!!! <a href="/userlogin">Login</a></p>';
+                document.querySelector('h1.opacity').insertAdjacentElement('afterend', successMessage);
             };
 
             // Event listener for form submission
@@ -394,7 +395,8 @@
                     })
                         .then(response => {
                             if (response.ok) {
-                                showSuccessPopup(); // Show success message if the response is OK
+                                form.reset(); // Clear form fields after successful registration
+                                showSuccessMessage(); // Show success message near the "SIGN UP" title
                             } else {
                                 throw new Error('Registration failed');
                             }
@@ -407,7 +409,6 @@
             }
         });
     </script>
-
 
 
 </body>

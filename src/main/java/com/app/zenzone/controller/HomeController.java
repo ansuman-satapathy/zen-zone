@@ -14,7 +14,6 @@ import com.app.zenzone.repository.UserRepository;
 import com.app.zenzone.service.UserService;
 
 import jakarta.servlet.http.HttpSession;
-import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class HomeController {
