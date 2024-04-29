@@ -28,9 +28,14 @@ document.addEventListener('DOMContentLoaded', function () {
             <p>Due Date: ${todo.dueDate}</p>
             <p>Priority: ${todo.priority}</p>
             <p>Category: ${todo.category}</p>
-            <button class="completeButton" data-id="${todo.id}" ${todo.completed ? 'disabled' : ''}><i class='bx bx-check-double'></i></button>
-            <button class="editButton" data-id="${todo.id}"><i class='bx bx-edit-alt'></i></button>
-            <button class="deleteButton" data-id="${todo.id}"><i class='bx bxs-message-square-x'></i></button>
+            <button class="completeButton" data-id="${todo.id}" ${todo.completed ? 'disabled' : ''}>
+            <i class='bx bx-check-double' ></i>
+            </button>
+            <button class="editButton" data-id="${todo.id}">
+            <i class='bx bxs-pencil' ></i></button>
+            <button class="deleteButton" data-id="${todo.id}">
+            <i class='bx bxs-trash'></i>
+            </button>
         `;
         return todoElement;
     }
@@ -74,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 fetchAndDisplayTodos();
                 todoForm.reset();
                 todoForm.removeAttribute('data-action');
-                document.querySelector('button[type="submit"]').textContent = '+';
+                document.querySelector('button[type="submit"]').textContent = 'Add';
             });
     });
 
@@ -100,7 +105,7 @@ document.addEventListener('DOMContentLoaded', function () {
            // Change form submit button to update todo
            todoForm.setAttribute('data-action', 'update');
            todoForm.setAttribute('data-id', todoId);
-           document.querySelector('button[type="submit"]').textContent = 'Update Todo';
+           document.querySelector('button[type="submit"]').textContent = 'Update';
        } else if (event.target.classList.contains('completeButton')) {
            const todoId = event.target.dataset.id;
            fetch(`/todo/${todoId}/complete`, {

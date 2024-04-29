@@ -23,8 +23,10 @@ document.addEventListener('DOMContentLoaded', function () {
             <h3>${journal.title}</h3>
             <p>${journal.entry}</p>
             <p>Date: ${journal.date}</p>
-            <button class="editButton" data-id="${journal.id}">Edit</button>
-            <button class="deleteButton" data-id="${journal.id}">Delete</button>
+            <button class="editButton" data-id="${journal.id}">
+            <i class='bx bxs-pencil' ></i></button>
+            <button class="deleteButton" data-id="${journal.id}">
+            <i class='bx bxs-trash'></i></button>
         `;
         return journalElement;
     }
@@ -81,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 // Change form action to update mode
                 journalForm.setAttribute('data-action', 'update');
                 journalForm.setAttribute('data-id', journal.id);
-                document.querySelector('button[type="submit"]').textContent = 'Update Journal';
+                document.querySelector('button[type="submit"]').textContent = 'Update';
             });
     }
 
