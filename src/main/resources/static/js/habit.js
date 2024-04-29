@@ -30,9 +30,10 @@ function createHabitElement(habit) {
           <h3>${habit.name}</h3>
           <p>${habit.description}</p>
           <p>Streak Goal: ${habit.streakGoal}</p>
-          <button class="completeButton ${habit.completed ? 'completed' : ''}" data-id="${habit.id}">Complete</button>
-          <button class="editButton" data-id="${habit.id}">Edit</button>
-          <button class="deleteButton" data-id="${habit.id}">Delete</button>
+          <button class="completeButton ${habit.completed ? 'completed' : ''}" data-id="${habit.id}">
+          <i class='bx bx-check-double' ></i></button>
+          <button class="editButton" data-id="${habit.id}"><i class='bx bxs-pencil' ></i></button>
+          <button class="deleteButton" data-id="${habit.id}"> <i class='bx bxs-trash'></i></button>
       `;
   return habitElement;
 }
@@ -54,7 +55,7 @@ function createHabitElement(habit) {
           // Change form action to update mode
           habitForm.setAttribute("data-action", "update");
           document.querySelector('button[type="submit"]').textContent =
-            "Update Habit";
+            "Update";
         });
     } else if (target.classList.contains("completeButton")) {
       const habitId = target.dataset.id;

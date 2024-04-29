@@ -1,60 +1,249 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+/* importing Poppins (sans-serif) font from googlr fonts */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  scroll-behavior: smooth;
+  font-family: "Poppins", sans-serif;
 }
 
-.container {
-    max-width: 800px;
-    margin: 50px auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    background-color: #f9f9f9;
+/* Color schemes */
+:root {
+  --mainBackgroundColor: #e9f0ff;
+  --headerColor: #101921;
+  --headerTextColor: #d6d4f9;
+  --textColor: #020025;
+  --spanColor: #de60f8;
+  --divBackgroundColor: #ececec;
+  --addbuttonColor: #de60f8;
+  --addClickColor: #9942ab;
+  --blurCircle-1: #b6b5ff;
+  --blurCircle-2: #fea5ff;
+  --trashBgColor: #f44336;
+  --trashClickColor: #a72d25;
+  --editBgColor: #008cba;
+  --editClickColor: #00526d;
+  --secondTextColor: #ffffff;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+/* Body styles */
+body {
+  background-color: var(--mainBackgroundColor);
+  color: var(--textColor);
+}
+
+/* Header Stylling */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 0.2rem 9%;
+  background: var(--headerColor);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
 }
 
 h1 {
-    text-align: center;
-    margin-bottom: 20px;
+  font-size: 3rem;
+  color: var(--headerTextColor);
+  font-weight: 800;
+  text-align: center;
+  flex-grow: 1;
 }
 
-form {
-    margin-bottom: 20px;
+span {
+  font-size: 3.5rem;
+  color: var(--spanColor);
 }
 
-form input, form textarea, form button {
-    display: block;
-    margin-bottom: 10px;
-    padding: 8px;
-    width: 100%;
-    font-size: 16px;
+header a {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--headerTextColor);
+  text-decoration: none;
+  transition: 0.4s ease;
+  margin-left: auto;
+}
+
+header a:hover {
+  transform: scale(1.2);
+  color: var(--spanColor);
+}
+
+section {
+  max-height: 100vh;
+  padding: 6.7rem;
+}
+
+.blurCircle-1 {
+  position: absolute;
+  top: -8rem;
+  left: -8rem;
+  width: 45rem;
+  height: 45rem;
+  background-color: var(--blurCircle-1);
+  border-radius: 50%;
+  filter: blur(5rem);
+  z-index: -1;
+}
+.blurCircle-2 {
+  position: absolute;
+  bottom: 5rem;
+  right: -2rem;
+  width: 50rem;
+  height: 50rem;
+  background-color: var(--blurCircle-2);
+  border-radius: 50%;
+  filter: blur(8rem);
+  z-index: -1;
+}
+
+/* Container Styles */
+.container {
+  width: 50%;
+  max-height: 100vh;
+  margin: auto;
+  background-color: rgba(236, 236, 236, 0.5);
+  padding: 2rem;
+  margin-top: 2.5rem;
+  border-radius: 4rem;
+  backdrop-filter: blur(100px);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  overflow-y: hidden;
+}
+/* Form Styles */
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.form input {
+  width: 100%;
+  height: 100%;
+  margin-bottom: 1rem;
+  padding: 1rem 3rem;
+  border: none;
+  border-radius: 4rem;
+  box-sizing: border-box;
+  transition: box-shadow 0.3s ease;
+}
+.form input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--spanColor);
+}
+.form textarea {
+  width: 100%;
+  height: 100%;
+  margin-bottom: 1rem;
+  padding: 1rem 3rem;
+  border: none;
+  border-radius: 4rem;
+  box-sizing: border-box;
+  scrollbar-width: none;
+  transition: box-shadow 0.3s ease;
+}
+.form textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--spanColor);
+}
+/* add button stylling */
+#addButton {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 1rem auto;
+  background: var(--addbuttonColor);
+  border: none;
+  border-radius: 2rem;
+  font-size: 1.7rem;
+  font-weight: 600;
+  padding: 1rem 1.5rem;
+  color: var(--textColor);
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+#addButton:hover {
+  transform: scale(1.1);
+}
+#addButton:active {
+  transform: scale(0.9);
+  background: var(--addClickColor);
+  color: var(--textColor);
 }
 
 #journalsContainer {
-    margin-top: 20px;
+  height: 30rem;
+  overflow-y: auto;
+  scrollbar-width: none;
 }
 
 .journal {
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 10px;
-    margin-bottom: 10px;
-    background-color: #fff;
+  background-color: var(--divBackgroundColor);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.journal h3 {
+  font-size: 1.7rem;
+  margin-bottom: 0.5rem;
 }
 
-.journal h3 {
-    margin-top: 0;
+.journal p {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
 }
 
 .journal button {
-    margin-left: 10px;
-    padding: 5px 10px;
-    font-size: 14px;
-    cursor: pointer;
-}
-
-.deleteButton {
-    background-color: #f44336;
-    color: #fff;
+    margin-right: 0.5rem;
+    padding: 0.5rem 1rem;
     border: none;
-}
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+
+/* edit button design */
+.journal button.editButton {
+    background-color: var(--editBgColor);
+    font-size: 1.5rem;
+    color: var(--secondTextColor) ;
+  }
+  .journal button.editButton:hover{
+    transform: scale(1.1);
+  }
+  .journal button.editButton:active{
+    transform: scale(0.9);
+    background-color: var(--editClickColor);
+  }
+  
+  /* delete button style */
+  .journal button.deleteButton {
+    background-color: var(--trashBgColor);
+    font-size: 1.5rem;
+    color: var(--secondTextColor) ;
+  }
+  .journal button.deleteButton:hover{
+    transform: scale(1.1);
+  }
+  .journal button.deleteButton:active{
+    transform: scale(0.9);
+    background-color: var(--trashClickColor);
+  }

@@ -1,13 +1,150 @@
-/* styles.css */
-.timer-container {
-    text-align: center;
-    margin-top: 50px;
+/* importing Poppins (sans-serif) font from googlr fonts */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  scroll-behavior: smooth;
+  font-family: "Poppins", sans-serif;
 }
 
-#timer {
-    font-size: 48px;
-    margin-bottom: 20px;
+/* Color schemes */
+:root {
+  --mainBackgroundColor: #e9f0ff;
+  --headerColor: #101921;
+  --headerTextColor: #d6d4f9;
+  --textColor: #020025;
+  --spanColor: #de60f8;
+  --divBackgroundColor: #ececec;
+  --blurCircle-1: #b6b5ff;
+  --blurCircle-2: #fea5ff;
+  --secondTextColor: #ffffff;
 }
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+/* Body styles */
+body {
+  background-color: var(--mainBackgroundColor);
+  color: var(--textColor);
+}
+
+/* Header Stylling */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 0.2rem 9%;
+  background: var(--headerColor);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+
+h1 {
+  font-size: 3rem;
+  color: var(--headerTextColor);
+  font-weight: 800;
+  text-align: center;
+  flex-grow: 1;
+}
+
+span {
+  font-size: 3.5rem;
+  color: var(--spanColor);
+}
+section {
+  max-height: 100vh;
+  padding: 6.7rem;
+}
+
+header a {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--headerTextColor);
+  text-decoration: none;
+  transition: 0.4s ease;
+  margin-left: auto;
+}
+
+header a:hover {
+  transform: scale(1.2);
+  color: var(--spanColor);
+}
+
+.blurCircle-1 {
+  position: absolute;
+  top: -8rem;
+  left: -8rem;
+  width: 45rem;
+  height: 45rem;
+  background-color: var(--blurCircle-1);
+  border-radius: 50%;
+  filter: blur(5rem);
+  z-index: -1;
+}
+.blurCircle-2 {
+  position: absolute;
+  bottom: 5rem;
+  right: -2rem;
+  width: 50rem;
+  height: 50rem;
+  background-color: var(--blurCircle-2);
+  border-radius: 50%;
+  filter: blur(8rem);
+  z-index: -1;
+}
+
+/* Container Styles */
+.timer-container {
+    width: 50%;
+    max-height: 90vh;
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+    background-color: rgba(236, 236, 236, 0.5);
+    padding: 2rem;
+    margin-top: 2.4rem;
+    border-radius: 4rem;
+    backdrop-filter: blur(100px);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+   /* centering the div */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow-y: hidden;
+  }
+  
+  #timer {
+      font-size: 4.8rem;
+      margin-bottom: 2rem;
+  }
+
+  .button-container button {
+    margin-right: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: var(--spanColor);
+    font-size: 1.6rem;
+    border: none;
+    border-radius: 4rem;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+
+  #mode {
+    padding: 3rem;
+    font-size: 1.4rem;
+  } 
+/* styles.css
 
 .button-container {
     margin-bottom: 20px;
@@ -21,4 +158,4 @@
 
 #mode {
     font-size: 24px;
-}
+} */

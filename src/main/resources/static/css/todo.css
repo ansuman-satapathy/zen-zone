@@ -19,14 +19,21 @@
   --textColor: #020025;
   --spanColor: #de60f8;
   --divBackgroundColor: #ececec;
-  --addbuttonColor: #4cc2ff;
-  --buttonHovereColor: #3587b2;
+  --addbuttonColor: #de60f8;
+  --addClickColor: #9942ab;
   --blurCircle-1: #b6b5ff;
   --blurCircle-2: #fea5ff;
+  --completeBgColor:#4CAF50;
+  --completeClickColor: #2a622d;
+  --trashBgColor:#f44336;
+  --trashClickColor:#a72d25;
+  --editBgColor: #008cba;
+  --editClickColor:#00526d;
+  --secondTextColor:#ffffff;
 }
 
 html {
-  font-size: 62%;
+  font-size: 62.5%;
   overflow-x: hidden;
 }
 
@@ -36,39 +43,42 @@ body {
   color: var(--textColor);
 }
 
-/* Header styles */
+/* Header Stylling */
 header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  padding: 1rem 9%;
+  padding: 0.2rem 9%;
   background: var(--headerColor);
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 100;
 }
-/* Exercise-zone stylling */
+
 h1 {
   font-size: 3rem;
   color: var(--headerTextColor);
   font-weight: 800;
   text-align: center;
-  margin-left: 51rem;
+  flex-grow: 1; 
 }
+
 span {
   font-size: 3.5rem;
   color: var(--spanColor);
 }
 
 header a {
-  font-size: 1.4rem;
-  font-weight: 500;
+  font-size: 2rem;
+  font-weight: 700;
   color: var(--headerTextColor);
   text-decoration: none;
   transition: 0.4s ease;
+  margin-left: auto;
 }
+
 header a:hover {
   transform: scale(1.2);
   color: var(--spanColor);
@@ -76,113 +86,171 @@ header a:hover {
 
 section {
   max-height: 100vh;
-  padding: 7rem;
+  padding: 6.7rem;
 }
 
 .blurCircle-1 {
-    position: absolute;
-    top: -8rem;
-    left: -8rem;
-    width: 45rem;
-    height: 45rem;
-    background-color: var(--blurCircle-1);
-    border-radius: 50%;
-    filter: blur(5rem);
-    z-index: -1;
-  }
-  .blurCircle-2 {
-    position: absolute;
-    bottom: 5rem;
-    right: 0;
-    width: 50rem;
-    height: 50rem;
-    background-color: var(--blurCircle-2);
-    border-radius: 50%;
-    filter: blur(8rem);
-    z-index: -1;
-  }
+  position: absolute;
+  top: -8rem;
+  left: -8rem;
+  width: 45rem;
+  height: 45rem;
+  background-color: var(--blurCircle-1);
+  border-radius: 50%;
+  filter: blur(5rem);
+  z-index: -1;
+}
+.blurCircle-2 {
+  position: absolute;
+  bottom: 5rem;
+  right: -2rem;
+  width: 50rem;
+  height: 50rem;
+  background-color: var(--blurCircle-2);
+  border-radius: 50%;
+  filter: blur(8rem);
+  z-index: -1;
+}
 
+/* Container Styles */
 .container {
-    width: 45%;
-    height: 80vh; 
-    margin: 2.7rem auto;
-    background-color: rgba(236, 236, 236, 0.8);
-    padding: 2rem;
-    border-radius: 4rem;
-    overflow-y: hidden;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); 
+  width: 50%;
+  max-height: 90vh;
+  margin: auto;
+  background-color: rgba(236, 236, 236, 0.5);
+  padding: 2rem;
+  margin-top: 2.4rem;
+  border-radius: 4rem;
+  backdrop-filter: blur(100px);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  overflow-y: hidden;
 }
 
-
-
-
-  
-/* styling for submit button  */
-#addButton {
-    position: relative;
-    display: flex; 
-    justify-content: center;
-    align-items: center;
-    margin: 2rem auto; 
-    width: 5rem;
-    height: 5rem;
-    background: var(--addbuttonColor);
-    border: none;
-    border-radius: 50%;
-    padding: 2rem;
-    font-size: 4rem;
-    font-weight: 600;
-    color: var(--textColor);
-    cursor: pointer;
-    overflow: hidden;
-    transition: 0.3s;
-}
-
+/* Form Styles */
 .form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
 
 .form input {
-    width: 100%;
-    margin-bottom: 1rem;
-    padding: 0.5rem;
-    border: none;
-    border-radius: 4rem;
-    padding: 1rem;
-    box-sizing: border-box;
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border: none;
+  border-radius: 4rem;
+  box-sizing: border-box;
+  transition: box-shadow 0.3s ease;
+}
+.form input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--spanColor); 
 }
 
-.todosContainer{
-    width: 100%;
-    margin-bottom: 1rem;
-    padding: 0.5rem;
-    border: none;
-    border-radius: 4rem;
-    padding: 1rem;
-    box-sizing: border-box;
+/* add button stylling */
+#addButton {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 2rem auto;
+  background: var(--addbuttonColor);
+  border: none;
+  border-radius: 2rem;
+  font-size: 2rem;
+  padding: 1rem 2rem; 
+  color: var(--textColor);
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+#addButton:hover {
+  transform: scale(1.1);
+}
+#addButton:active {
+  transform: scale(0.9);
+  background: var(--addClickColor);
+  color: var(--textColor);
 }
 
-/* Add additional styles as needed */
+/* Todo Styling */
+#todosContainer {
+  max-height: 22rem;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
 
+.todo {
+  background-color: var(--divBackgroundColor);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 
+.todo h3 {
+  font-size: 1.7rem;
+  margin-bottom: 0.5rem;
+}
 
-/* .completeButton {
-    display: flex;
-  background-color: #4caf50;
-  color: #fff;
+.todo p {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.todo button {
+  margin-right: 0.5rem;
+  padding: 0.5rem 1rem;
   border: none;
-}  */
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+/* complete button design */
+.todo button.completeButton {
+  background-color: var(--completeBgColor);
+  font-size: 1.5rem;
+  color: var(--secondTextColor) ;
+}
+.todo button.completeButton:hover{
+  transform: scale(1.1);
+}
+.todo button.completeButton:active{
+  transform: scale(0.9);
+  background-color: var(--completeClickColor);
+}
 
-/* .deleteButton {
-    display: flex;
-  background-color: #f44336;
-  color: #fff;
-  border: none;
-} */
+/* edit button design */
+.todo button.editButton {
+  background-color: var(--editBgColor);
+  font-size: 1.5rem;
+  color: var(--secondTextColor) ;
+}
+.todo button.editButton:hover{
+  transform: scale(1.1);
+}
+.todo button.editButton:active{
+  transform: scale(0.9);
+  background-color: var(--editClickColor);
+}
+
+/* delete button style */
+.todo button.deleteButton {
+  background-color: var(--trashBgColor);
+  font-size: 1.5rem;
+  color: var(--secondTextColor) ;
+}
+.todo button.deleteButton:hover{
+  transform: scale(1.1);
+}
+.todo button.deleteButton:active{
+  transform: scale(0.9s);
+  background-color: var(--trashClickColor);
+}
+
 .completed {
   text-decoration: line-through;
-  opacity: 0.5; 
+  opacity: 0.5;
 }
