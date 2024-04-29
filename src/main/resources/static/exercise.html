@@ -1,44 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Exercise-Zone</title>
-    <link rel="stylesheet" href="css/exercise.css"> <!-- Link to CSS file for styling -->
-</head>
-<body>
+      <!-- box-icons import -->
+      <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="css/exercise.css" />
+    <!-- Link to CSS file for styling -->
+  </head>
+  <body>
     <header>
-        <h1>Exercise <span>Z</span>one</h1>
-        <a href="dashboard.html">Dashboard</a>
+      <h1>Exercise <span>Z</span>one</h1>
+      <a href="dashboard.html"><i class='bx bx-log-out-circle'></i></a>
     </header>
     <section>
-    <div class="container">
-      
+      <div class="blurCircle-1"></div>
+      <div class="blurCircle-2"></div>
+
+      <div class="container">
         <!-- Categories -->
         <div class="categories">
-            <button class="active" id="active"></button>
-            <button id="stretch-btn">Stretch</button>
-            <button id="hiit-btn">HIIT</button>
-            <button id="yoga-btn">Yoga</button>
-            <button id="strength-btn">Strength</button>
-            <div class="intial-icon" id="intial-icon">
-                <img src="assets/exercise/running-icon.png" alt="">
-                <h2>Move It or Lose It</h2>
-            </div>
-            <div class="intial-icon initial-hidden" id="intial-icon">
-                <img src="assets/exercise/running-icon.png" alt="">
-                <h2>Move It or Lose It</h2>
-            </div>
+          <button class="active" id="active"></button>
+          <button id="stretch-btn">Stretch</button>
+          <button id="hiit-btn">HIIT</button>
+          <button id="yoga-btn">Yoga</button>
+          <button id="strength-btn">Strength</button>
+          <div class="intial-icon" id="intial-icon">
+            <img src="assets/exercise/running-icon.png" alt="" />
+            <h2>Move It or Lose It</h2>
+          </div>
+          <div class="intial-icon initial-hidden" id="intial-icon">
+            <img src="assets/exercise/running-icon.png" alt="" />
+            <h2>Move It or Lose It</h2>
+          </div>
         </div>
-        
+
         <!-- Exercises -->
         <div class="exercises">
-            <!-- Exercise content will be dynamically added here -->
+          <!-- Exercise content will be dynamically added here -->
         </div>
-    </div>
-    
-</section>
+      </div>
+    </section>
     <!-- JavaScript file for functionality -->
-    <script src="js/exercise.js"></script> 
-</body>
+    <script src="js/exercise.js"></script>
+  </body>
 </html>
