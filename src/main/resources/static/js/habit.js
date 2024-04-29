@@ -31,9 +31,9 @@ function createHabitElement(habit) {
           <p>${habit.description}</p>
           <p>Streak Goal: ${habit.streakGoal}</p>
           <button class="completeButton ${habit.completed ? 'completed' : ''}" data-id="${habit.id}">
-          <i class='bx bx-check-double' ></i></button>
-          <button class="editButton" data-id="${habit.id}"><i class='bx bxs-pencil' ></i></button>
-          <button class="deleteButton" data-id="${habit.id}"> <i class='bx bxs-trash'></i></button>
+          complete</button>
+          <button class="editButton" data-id="${habit.id}">edit</button>
+          <button class="deleteButton" data-id="${habit.id}">delete</button>
       `;
   return habitElement;
 }

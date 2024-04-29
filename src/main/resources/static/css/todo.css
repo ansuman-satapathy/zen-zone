@@ -23,11 +23,11 @@
   --addClickColor: #9942ab;
   --blurCircle-1: #b6b5ff;
   --blurCircle-2: #fea5ff;
-  --completeBgColor:#4CAF50;
+  --completeBgColor:#de60f8;
   --completeClickColor: #2a622d;
-  --trashBgColor:#f44336;
+  --trashBgColor:#a72d25;
   --trashClickColor:#a72d25;
-  --editBgColor: #008cba;
+  --editBgColor: #a09c9c;
   --editClickColor:#00526d;
   --secondTextColor:#ffffff;
 }
@@ -204,7 +204,7 @@ section {
   margin-right: 0.5rem;
   padding: 0.5rem 1rem;
   border: none;
-  border-radius: 50%;
+  border-radius: 4rem;
   cursor: pointer;
   transition: transform 0.3s ease, background-color 0.3s ease;
 }

@@ -24,9 +24,9 @@ document.addEventListener('DOMContentLoaded', function () {
             <p>${journal.entry}</p>
             <p>Date: ${journal.date}</p>
             <button class="editButton" data-id="${journal.id}">
-            <i class='bx bxs-pencil' ></i></button>
+            edit</button>
             <button class="deleteButton" data-id="${journal.id}">
-            <i class='bx bxs-trash'></i></button>
+            delete</button>
         `;
         return journalElement;
     }
