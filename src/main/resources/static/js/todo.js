@@ -41,12 +41,12 @@ document.addEventListener('DOMContentLoaded', function () {
             <p>Priority: ${todo.priority}</p>
             <p>Category: ${todo.category}</p>
             <button class="completeButton" data-id="${todo.id}" ${todo.completed ? 'disabled' : ''}>
-            <i class='bx bx-check-double' ></i>
+           complete
             </button>
             <button class="editButton" data-id="${todo.id}">
-            <i class='bx bxs-pencil' ></i></button>
+            edit </button>
             <button class="deleteButton" data-id="${todo.id}">
-            <i class='bx bxs-trash'></i>
+            delete
             </button>
         `;
         return todoElement;

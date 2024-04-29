@@ -18,7 +18,7 @@
   --headerTextColor: #d6d4f9;
   --textColor: #020025;
   --spanColor: #de60f8;
-  --divBackgroundColor: #ececec;
+  --divBackgroundColor: rgba(255, 255, 255, 0.2);
   --addbuttonColor: #de60f8;
   --addClickColor: #9942ab;
   --blurCircle-1: #b6b5ff;
@@ -216,7 +216,7 @@ section {
     margin-right: 0.5rem;
     padding: 0.5rem 1rem;
     border: none;
-    border-radius: 50%;
+    border-radius: 4rem;
     cursor: pointer;
     transition: transform 0.3s ease, background-color 0.3s ease;
   }
