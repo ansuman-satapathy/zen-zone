@@ -116,7 +116,7 @@ section {
   background-color: var(--buttonColor);
   color: var(--headerTextColor);
   cursor: pointer;
-  transition: backgr0.3s ease;
+  transition: transform 0.3s ease, background-color 0.3s ease;
 }
 .categories button:hover {
   transform: scale(1.2);

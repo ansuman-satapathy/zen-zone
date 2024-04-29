@@ -18,7 +18,8 @@
   --headerTextColor: #d6d4f9;
   --textColor: #020025;
   --spanColor: #de60f8;
-  --divBackgroundColor: #ececec;
+  --onClickColor:#b6b5ff;
+  --divBackgroundColor: rgba(255, 255, 255, 0.2);
   --blurCircle-1: #b6b5ff;
   --blurCircle-2: #fea5ff;
   --secondTextColor: #ffffff;
@@ -105,12 +106,12 @@ header a:hover {
 
 /* Container Styles */
 .timer-container {
-    width: 50%;
+    width: 30%;
     max-height: 90vh;
     justify-content: center;
     text-align: center;
     margin: auto;
-    background-color: rgba(236, 236, 236, 0.5);
+    background-color: var(--divBackgroundColor);
     padding: 2rem;
     margin-top: 2.4rem;
     border-radius: 4rem;
@@ -125,37 +126,38 @@ header a:hover {
   }
   
   #timer {
-      font-size: 4.8rem;
+      font-size: 6rem;
       margin-bottom: 2rem;
+      background-color: rgba(255, 0, 0, 0.3);
+      max-width: 50%;
+      max-height: auto;
+      border-radius: 4rem;
+    /* centering the div on x axis */
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
   }
 
   .button-container button {
     margin-right: 0.5rem;
-    padding: 0.5rem 1rem;
+    padding: 0.7rem 1.5rem; /* Increased padding for a better appearance */
     background-color: var(--spanColor);
-    font-size: 1.6rem;
+    font-size: 1.4rem;
+    font-weight: 400;
     border: none;
     border-radius: 4rem;
     cursor: pointer;
-    transition: transform 0.3s ease, background-color 0.3s ease;
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Added transition */
   }
+.button-container button:hover {
+  transform: scale(1.1);
+}
 
+.button-container button:active {
+  transform: scale(0.9);
+  background-color: var(--onClickColor);
+}
   #mode {
     padding: 3rem;
     font-size: 1.4rem;
   } 
-/* styles.css
-
-.button-container {
-    margin-bottom: 20px;
-}
-
-.button-container button {
-    margin: 0 5px;
-    padding: 10px 20px;
-    font-size: 18px;
-}
-
-#mode {
-    font-size: 24px;
-} */
