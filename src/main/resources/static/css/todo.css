@@ -18,7 +18,7 @@
   --headerTextColor: #d6d4f9;
   --textColor: #020025;
   --spanColor: #de60f8;
-  --divBackgroundColor: #fffefe;
+  --divBackgroundColor: rgba(255, 255, 255, 0.2);
   --addbuttonColor: #de60f8;
   --addClickColor: #9942ab;
   --blurCircle-1: #b6b5ff;
