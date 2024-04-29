@@ -125,6 +125,7 @@ header a:hover {
   overflow-y: hidden;
 }
 
+
 #timer {
   font-size: 8rem;
   font-weight: 600;
@@ -137,7 +138,6 @@ header a:hover {
   left: 50%;
   transform: translate(-50%);
 }
-
 .button-container button {
   padding: 0.7rem 1.5rem;
   background-color: var(--spanColor);
@@ -157,6 +157,17 @@ header a:hover {
   transform: scale(0.9);
   background-color: var(--onClickColor);
 }
+.button-group {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem; 
+}
+
+.button-group button {
+  margin: 0 0.5rem; 
+}
+
+
 #mode {
   padding: 3rem;
   font-size: 1.4rem;
