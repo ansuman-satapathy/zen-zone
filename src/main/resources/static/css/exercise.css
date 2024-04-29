@@ -14,14 +14,16 @@
 
 /* Color schemes */
 :root {
-  --mainBackgroundColor: #bfd2ff;
+  --mainBackgroundColor: #e9f0ff;
   --headerColor: #101921;
   --headerTextColor: #d6d4f9;
   --textColor: #020025;
   --spanColor: #de60f8;
-  --divBackgroundColor: #93baf1;
+  --divBackgroundColor: #93baf13e;
   --buttonColor: #3d487f;
   --buttonActiveColor: #9d331e;
+  --blurCircle-1: #b6b5ff;
+  --blurCircle-2: #fea5ff;
 }
 
 html {
@@ -62,7 +64,7 @@ span {
 }
 
 header a {
-  font-size: 1.4rem;
+  font-size: 2.4rem;
   font-weight: 500;
   color: var(--headerTextColor);
   text-decoration: none;
@@ -80,6 +82,29 @@ section {
   padding: 10rem 9% 2rem;
 }
 
+.blurCircle-1 {
+  position: absolute;
+  top: -8rem;
+  left: -8rem;
+  width: 45rem;
+  height: 45rem;
+  background-color: var(--blurCircle-1);
+  border-radius: 50%;
+  filter: blur(5rem);
+  z-index: -1;
+}
+.blurCircle-2 {
+  position: absolute;
+  bottom: 5rem;
+  right: -2rem;
+  width: 50rem;
+  height: 50rem;
+  background-color: var(--blurCircle-2);
+  border-radius: 50%;
+  filter: blur(8rem);
+  z-index: -1;
+}
+
 /* Container styles */
 .container {
   width: 65%;
@@ -89,7 +114,8 @@ section {
   background-color: var(--divBackgroundColor);
   border-radius: 8px;
   padding: 20px;
-  overflow-y: hidden;
+  overflow-y: auto;
+  scrollbar-width: none;
 }
 .container h2 {
   color: var(--textColor);
@@ -140,6 +166,8 @@ section {
   display: grid;
   grid-template-columns: repeat(2, minmax(200px, 1fr));
   grid-gap: 20px;
+  overflow-y: auto;
+  scrollbar-width: none;
 }
 
 /* Exercise card styles */
@@ -150,7 +178,7 @@ section {
   align-items: center;
   border: 1px solid #ddd;
   border-radius: 16px;
-  background-color: #fff;
+  background-color: #ffffff3a;
   padding: 20px;
 }
 
