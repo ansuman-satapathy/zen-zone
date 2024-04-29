@@ -1,23 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Journal</title>
-    <link rel="stylesheet" href="css/journal.css">
-</head>
-<body>
-<div class="container">
-    <h1>Journal</h1>
-    <form id="journalForm">
-        <input type="text" id="titleInput" placeholder="Title" required>
-        <textarea id="entryInput" placeholder="Journal Entry" required></textarea>
-        <input type="date" id="dateInput" required>
-        <button type="submit">Add Journal</button>
-    </form>
-    <div id="journalsContainer"></div>
-</div>
 
-<script src="js/journal.js"></script>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Journal</title>
+    <!-- box-icons import -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/journal.css" />
+</head>
+
+<body>
+    <header>
+        <h1><span>J</span>ournal</h1>
+        <a href="dashboard.html"><i class='bx bx-log-out-circle'></i></a>
+    </header>
+    <section>
+        <div class="blurCircle-1"></div>
+        <div class="blurCircle-2"></div>
+
+        <div class="container">
+            <div class="form">
+                <form id="journalForm">
+                    <input type="text" id="titleInput" placeholder="Title" required />
+                    <input type="date" id="dateInput" required />
+                    <textarea id="entryInput" placeholder="Journal Entry" required></textarea>
+                    <!-- add button -->
+                    <button type="submit" id="addButton">Add </button>
+                </form>
+            </div>
+            <div id="journalsContainer"></div>
+        </div>
+    </section>
+    <script src="js/journal.js"></script>
 </body>
+
 </html>

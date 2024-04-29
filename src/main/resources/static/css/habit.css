@@ -1,58 +1,272 @@
-/* Global Styles */
+/* importing Poppins (sans-serif) font from googlr fonts */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  scroll-behavior: smooth;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Color schemes */
+:root {
+  --mainBackgroundColor: #e9f0ff;
+  --headerColor: #101921;
+  --headerTextColor: #d6d4f9;
+  --textColor: #020025;
+  --spanColor: #de60f8;
+  --divBackgroundColor: rgba(255, 255, 255, 0.2);
+  --addbuttonColor: #de60f8;
+  --addClickColor: #9942ab;
+  --blurCircle-1: #b6b5ff;
+  --blurCircle-2: #fea5ff;
+  --completeBgColor:#4CAF50;
+  --completeClickColor: #2a622d;
+  --trashBgColor:#f44336;
+  --trashClickColor:#a72d25;
+  --editBgColor: #008cba;
+  --editClickColor:#00526d;
+  --secondTextColor:#ffffff;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+/* Body styles */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+  background-color: var(--mainBackgroundColor);
+  color: var(--textColor);
 }
 
+/* Header Stylling */
 header {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 1rem 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 0.2rem 9%;
+  background: var(--headerColor);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
 }
 
-main {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 2rem 0;
+h1 {
+  font-size: 3rem;
+  color: var(--headerTextColor);
+  font-weight: 800;
+  text-align: center;
+  flex-grow: 1; 
 }
 
-section {
-    margin-bottom: 2rem;
+span {
+  font-size: 3.5rem;
+  color: var(--spanColor);
 }
 
+header a {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--headerTextColor);
+  text-decoration: none;
+  transition: 0.4s ease;
+  margin-left: auto;
+}
+
+header a:hover {
+  transform: scale(1.2);
+  color: var(--spanColor);
+}
 h2 {
-    color: #333;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 2rem;
+}
+main{
+    max-height: 100vh;
+  padding: 6.7rem;
 }
 
-/* Form Styles */
+.blurCircle-1 {
+    position: absolute;
+    top: -8rem;
+    left: -8rem;
+    width: 45rem;
+    height: 45rem;
+    background-color: var(--blurCircle-1);
+    border-radius: 50%;
+    filter: blur(5rem);
+    z-index: -1;
+  }
+  .blurCircle-2 {
+    position: absolute;
+    bottom: 5rem;
+    right: -2rem;
+    width: 50rem;
+    height: 50rem;
+    background-color: var(--blurCircle-2);
+    border-radius: 50%;
+    filter: blur(8rem);
+    z-index: -1;
+  }
+
+  section {
+    width: 50%;
+    margin: auto;
+    background-color: rgba(236, 236, 236, 0.5);
+    padding: 2rem;
+    margin-top: 2.4rem;
+    border-radius: 4rem;
+    backdrop-filter: blur(100px);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    overflow-y: hidden;
+  }
+  p {
+    font-size: 1.4rem;
+  }
+
+  /* Form Styles */
 form {
     display: flex;
     flex-direction: column;
-}
-
-input[type="text"] {
+    align-items: center;
+    width: 100%;
+  }
+  
+  form input {
+    width: 100%;
     margin-bottom: 1rem;
-    padding: 0.5rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-button {
-    padding: 0.5rem 1rem;
-    background-color: #333;
-    color: #fff;
+    padding: 1rem;
     border: none;
-    border-radius: 4px;
+    border-radius: 4rem;
+    box-sizing: border-box;
+    transition: box-shadow 0.3s ease;
+  }
+  form input:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--spanColor); 
+  }
+  
+  /* add button stylling */
+  #addButton {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 1rem auto;
+    background: var(--addbuttonColor);
+    border: none;
+    border-radius: 2rem;
+    font-size: 2rem;
+    padding: 1rem 1.5rem; 
+    color: var(--textColor);
     cursor: pointer;
-}
+    overflow: hidden;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+  #addButton:hover {
+    transform: scale(1.1);
+  }
+  #addButton:active {
+    transform: scale(0.9);
+    background: var(--addClickColor);
+    color: var(--textColor);
+  }
 
-button:hover {
-    background-color: #555;
-}
 
-/* Habit Cards */
+  #habitsContainer {
+    max-height: 22rem;
+    overflow-y: auto;
+    scrollbar-width: none;
+  }
+  
+  #all-habits h2{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 2rem;
+  }
+  .habit {
+    background-color: var(--divBackgroundColor);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.0);
+  }
+  
+  .habit h3 {
+    font-size: 1.7rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .habit p {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .habit button {
+    margin-right: 0.5rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+  /* complete button design */
+  .habit button.completeButton {
+    background-color: var(--completeBgColor);
+    font-size: 1.5rem;
+    color: var(--secondTextColor) ;
+  }
+  .habit button.completeButton:hover{
+    transform: scale(1.1);
+  }
+  .habit button.completeButton:active{
+    transform: scale(0.9);
+    background-color: var(--completeClickColor);
+  }
+  
+  /* edit button design */
+  .habit button.editButton {
+    background-color: var(--editBgColor);
+    font-size: 1.5rem;
+    color: var(--secondTextColor) ;
+  }
+  .habit button.editButton:hover{
+    transform: scale(1.1);
+  }
+  .habit button.editButton:active{
+    transform: scale(0.9);
+    background-color: var(--editClickColor);
+  }
+  
+  /* delete button style */
+  .habit button.deleteButton {
+    background-color: var(--trashBgColor);
+    font-size: 1.5rem;
+    color: var(--secondTextColor) ;
+  }
+  .habit button.deleteButton:hover{
+    transform: scale(1.1);
+  }
+  .habit button.deleteButton:active{
+    transform: scale(0.9s);
+    background-color: var(--trashClickColor);
+  }
+  
+  .completed {
+    text-decoration: line-through;
+    opacity: 0.5;
+  }
+/*  
 #habitsContainer {
     display: flex;
     flex-wrap: wrap;
@@ -67,7 +281,7 @@ button:hover {
         border-radius: 4px;
         padding: 2rem;
         margin-bottom: 1rem;
-        transition: all 1s ease-out; /* Smooth transition for the zoom effect */
+        transition: all 1s ease-out; 
 }
 
 .habit-card h3 {
@@ -81,16 +295,16 @@ button:hover {
 }
 
 .habit-card:hover {
-    transform: scale(1); /* Move the card 10px upwards on hover */
+    transform: scale(1); 
 }
 
 .habit.completed {
     text-decoration: line-through;
-    opacity: 0.5; /* Optional: decrease opacity for completed todos */
+    opacity: 0.5; 
 }
-/* Responsive Styles */
+
 @media (max-width: 600px) {
     main {
         padding: 1rem;
     }
-}
+} */

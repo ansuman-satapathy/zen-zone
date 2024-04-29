@@ -65,15 +65,13 @@ header {
   z-index: 100;
 }
 
-
 /* ZenZone Logo Stylling */
-.header {
+h1 {
   font-size: 2.7rem;
   color: var(--headTextColor);
   font-weight: 800;
   text-align: center;
   flex: 1;
-  margin-left: 17rem;
 }
 span {
   font-size: 3.2rem;
@@ -104,12 +102,10 @@ nav i:hover {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  width: 10rem;
+  width: 7rem;
   height: 100%;
   background: transparent;
   border: 0;
-  font-size: 1.4rem;
-  font-weight: 500;
   letter-spacing: 0.1rem;
   color: var(--headerStyleColor);
   cursor: pointer;
@@ -179,10 +175,6 @@ section {
 /* 3D hover effects */
 .box:hover {
   transform: scale(1.1);
-  /* transform:  
-      perspective(600px)
-      rotateX(20deg);
-    border-radius: 6px; */
 }
 
 /* todo, mindfulness, pomodoro */
