@@ -72,6 +72,8 @@ h1 {
   font-weight: 800;
   text-align: center;
   flex: 1;
+  margin-left: 18rem;
+
 }
 span {
   font-size: 3.2rem;
@@ -89,7 +91,7 @@ nav {
 nav i {
   font-size: 2rem;
   color: var(--headerStyleColor);
-  margin-right: 0.5rem;
+  margin-right: 1.2rem;
   transition: 0.3s;
   cursor: pointer;
 }
@@ -97,12 +99,12 @@ nav i:hover {
   transform: scale(1.2);
 }
 
-.logout {
+a {
   position: relative;
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  width: 7rem;
+  width: 4rem;
   height: 100%;
   background: transparent;
   border: 0;
@@ -111,7 +113,7 @@ nav i:hover {
   cursor: pointer;
   transition: 0.3s;
 }
-.logout:hover {
+a:hover {
   transform: scale(1.2);
 }
 
