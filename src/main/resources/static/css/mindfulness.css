@@ -1,49 +1,196 @@
-body {
+/* importing Poppins (sans-serif) font from googlr fonts */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: #fafafa;
-}
-
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
-.timer-container {
-    text-align: center;
-}
-
-#timer {
-    font-size: 60px;
-    margin-bottom: 20px;
-}
-
-.duration-selection {
-    margin-bottom: 20px;
-}
-
-button {
-    padding: 10px 20px;
-    font-size: 18px;
-    background-color: #00bcd4;
-    border: none;
-    color: white;
-    text-align: center;
+    box-sizing: border-box;
     text-decoration: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: "Poppins", sans-serif;
+}
+
+/* Color schemes */
+:root {
+    --mainBackgroundColor: #e9f0ff;
+    --headerColor: #101921;
+    --headerTextColor: #d6d4f9;
+    --textColor: #020025;
+    --spanColor: #de60f8;
+    --onClickColor: #b6b5ff;
+    --divBackgroundColor: rgba(255, 255, 255, 0.2);
+    --blurCircle-1: #b6b5ff;
+    --blurCircle-2: #fea5ff;
+    --secondTextColor: #ffffff;
+    --selectColor: #d9d9d94e;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+/* Body styles */
+body {
+    background-color: var(--mainBackgroundColor);
+    color: var(--textColor);
+}
+
+/* Header Stylling */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0.2rem 9%;
+    background: var(--headerColor);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+h1 {
+    font-size: 3rem;
+    color: var(--headerTextColor);
+    font-weight: 800;
+    text-align: center;
+    flex-grow: 1;
+}
+
+span {
+    font-size: 3.5rem;
+    color: var(--spanColor);
+}
+
+section {
+    max-height: 100vh;
+    padding: 6.7rem;
+}
+
+header a {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--headerTextColor);
+    text-decoration: none;
+    transition: 0.4s ease;
+    margin-left: auto;
+}
+
+header a:hover {
+    transform: scale(1.2);
+    color: var(--spanColor);
+}
+
+.blurCircle-1 {
+    position: absolute;
+    top: -8rem;
+    left: -8rem;
+    width: 45rem;
+    height: 45rem;
+    background-color: var(--blurCircle-1);
+    border-radius: 50%;
+    filter: blur(5rem);
+    z-index: -1;
+}
+
+.blurCircle-2 {
+    position: absolute;
+    bottom: 5rem;
+    right: -2rem;
+    width: 50rem;
+    height: 50rem;
+    background-color: var(--blurCircle-2);
+    border-radius: 50%;
+    filter: blur(8rem);
+    z-index: -1;
+}
+
+/* Conatiner-Styling */
+.timer-container {
+    width: 40%;
+    max-height: 100rem;
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+    background-color: var(--divBackgroundColor);
+    padding: 2rem;
+    margin-top: 2.4rem;
+    border-radius: 4rem;
+    backdrop-filter: blur(100px);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    /* centering the div */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow-y: hidden;
+}
+
+/* Timer stylling 00:00 */
+#timer {
+    font-size: 8rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    background-color: rgba(186, 186, 186, 0.3);
+    max-width: 50%;
+    min-height: 10rem;
+    border-radius: 4rem;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+/*dropdown and label stylling  */
+/* Label styling */
+label {
+    display: inline-block;
+    margin-right: 0.9rem;
+    font-size: 2.4rem;
+}
+/* Select styling */
+select {
+    justify-content: space-between;
+    padding: 0.7rem 2rem;
+    margin-bottom: 2rem;
+    font-size: 1.4rem;
+    border-radius: 2rem;
+    border: 0.2rem solid rgba(0, 0, 0, 0.2);
+    border-left: none;
+    border-top:none ;
+    background-color: transparent;
+    width: 30%;
+    transition: all 0.3s ease;
+}
+/* hover */
+select:hover{
+    transform: scale(1.1);
+}
+
+/* buttons stylling */
+.button-container button {
+    padding: 0.7rem 1.5rem;
+    background-color: var(--spanColor);
+    font-size: 1.4rem;
+    font-weight: 400;
+    border: none;
+    border-radius: 4rem;
     cursor: pointer;
-    border-radius: 5px;
-    transition-duration: 0.4s;
-    margin-right: 10px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    margin: 0.5rem;
 }
 
-button:hover {
-    background-color: #008ba3;
+.button-container button:hover {
+    transform: scale(1.1);
 }
 
-input[type="range"] {
-    width: 300px;
-    margin: 0 auto;
+.button-container button:active {
+    transform: scale(0.9);
+    background-color: var(--onClickColor);
+}
+
+/* Disabled button color */
+button:disabled {
+    background-color: rgba(195, 195, 195, 0.905);
 }

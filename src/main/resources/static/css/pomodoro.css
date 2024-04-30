@@ -141,6 +141,7 @@ header a:hover {
 .button-container button {
   padding: 0.7rem 1.5rem;
   background-color: var(--spanColor);
+  color: var(--textColor);
   font-size: 1.4rem;
   font-weight: 400;
   border: none;

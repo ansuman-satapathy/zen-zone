@@ -1,51 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mindfulness Timer</title>
-    <link rel="stylesheet" href="css/mindfulness.css"> <!-- Link to CSS file for styling -->
+    <!-- box-icons import -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <!-- Link to CSS file for styling -->
+    <link rel="stylesheet" href="css/mindfulness.css" />
 </head>
+
 <body>
-    <div class="container">
-        <div class="timer-container">
-            <div id="timer">25:00</div>
-            <div class="duration-selection">
-                <label for="duration-select">Select Duration:</label>
-                <select id="duration-select">
-                    <option value="5">5 Minutes</option>
-                    <option value="10">10 Minutes</option>
-                    <option value="15">15 Minutes</option>
-                    <option value="20">20 Minutes</option>
-                    <option value="30">30 Minutes</option>
-                    <option value="45">45 Minutes</option>
-                    <option value="60">60 Minutes</option>
-                    <option value="90">90 Minutes</option>
-                </select>
-            </div>
-            <div class="background-music">
-                <label for="music-select">Select Background Music:</label>
-                <select id="music-select">
-                    <option value="none">None</option>
-                    <option value="Beauty">Beauty</option>
-                    <option value="Dream">Dream</option>
-                    <option value="Hope">Hope</option>
-                    <option value="Memory">Memory</option>
-                    <option value="Time">Time</option>
-                    <option value="Nature">Nature</option>
-                    <option value="Stasis">Stasis</option>
-                    <option value="Alone">Alone</option>
-                </select>
-            </div><br>
-            
-            <div class="button-container">
-                <button id="begin-btn">Begin</button>
-                <button id="pause-resume-btn" disabled>Pause</button>
-                <button id="reset-btn" disabled>Reset</button>
+    <section>
+        <div class="blurCircle-1"></div>
+        <div class="blurCircle-2"></div>
+
+        <header>
+            <h1>Mind<span>f</span>ulness</h1>
+            <a href="dashboard.html"><i class="bx bx-log-out-circle"></i></a>
+        </header>
+
+        <div class="container">
+            <div class="timer-container">
+                <div id="timer">25:00</div>
+                <div class="duration-selection">
+                    <label for="duration-select"><i class='bx bxs-time-five'></i> </label>
+                    <select id="duration-select">
+                        <option value="5">5 Minutes</option>
+                        <option value="10">10 Minutes</option>
+                        <option value="15">15 Minutes</option>
+                        <option value="20">20 Minutes</option>
+                        <option value="30">30 Minutes</option>
+                        <option value="45">45 Minutes</option>
+                        <option value="60">60 Minutes</option>
+                        <option value="90">90 Minutes</option>
+                    </select>
+                </div>
+                <div class="background-music">
+                    <label for="music-select"><i class='bx bxs-music' ></i> </label>
+                    <select id="music-select">
+                        <option value="none">None</option>
+                        <option value="Beauty">Beauty</option>
+                        <option value="Dream">Dream</option>
+                        <option value="Hope">Hope</option>
+                        <option value="Memory">Memory</option>
+                        <option value="Time">Time</option>
+                        <option value="Nature">Nature</option>
+                        <option value="Stasis">Stasis</option>
+                        <option value="Alone">Alone</option>
+                    </select>
+                </div>
+                <br />
+
+                <div class="button-container">
+                    <button id="begin-btn">Begin</button>
+                    <button id="pause-resume-btn" disabled>Pause</button>
+                    <button id="reset-btn" disabled>Reset</button>
+                </div>
             </div>
         </div>
-    </div>
-
-    <script src="js/mindfulness.js"></script> <!-- Link to JavaScript file for functionality -->
+    </section>
+    <script src="js/mindfulness.js"></script>
+    <!-- Link to JavaScript file for functionality -->
 </body>
+
 </html>
