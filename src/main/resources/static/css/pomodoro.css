@@ -19,7 +19,7 @@
   --textColor: #020025;
   --spanColor: #de60f8;
   --onClickColor: #b6b5ff;
-  --divBackgroundColor: rgba(255, 255, 255, 0.2);
+  --divBackgroundColor: rgba(255, 255, 255, 0);
   --blurCircle-1: #b6b5ff;
   --blurCircle-2: #fea5ff;
   --secondTextColor: #ffffff;
@@ -104,43 +104,54 @@ header a:hover {
   z-index: -1;
 }
 
-/* Container Styles */
-.timer-container {
-  width: 40%;
-  max-height: 100rem;
+.box-container {
+  width: 80rem;
+  height: auto;
   justify-content: center;
+  align-items: center; 
   text-align: center;
-  margin: auto;
-  background-color: var(--divBackgroundColor);
-  padding: 2rem;
-  margin-top: 2.4rem;
+  background-color: none;
   border-radius: 4rem;
-  backdrop-filter: blur(100px);
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-  /* centering the div */
-  position: absolute;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0);
+  display: flex; 
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  overflow-y: hidden;
+  transform: translate(40%, 7%);
+  flex-direction: column; 
+}
+
+.timer-container {
+  width: 40rem;
+  height: 40rem;
+  background-color: var(--divBackgroundColor);
+  margin-top: 2rem;
+  border-radius: 50%;
+  backdrop-filter: blur(100px);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  overflow: hidden;
+
 }
 
 #timer {
+  width: 35rem;
+  height: 35rem;
   font-size: 8rem;
   font-weight: 600;
-  margin-bottom: 2rem;
   background-color: rgba(186, 186, 186, 0.3);
-  max-width: 50%;
-  min-height: 10rem;
-  border-radius: 4rem;
-  position: relative;
-  left: 50%;
-  transform: translate(-50%);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
 
 .button-container button {
   padding: 0.7rem 1.5rem;
   background-color: var(--spanColor);
+  color: var(--textColor);
   font-size: 1.4rem;
   font-weight: 400;
   border: none;
@@ -157,6 +168,18 @@ header a:hover {
   transform: scale(0.9);
   background-color: var(--onClickColor);
 }
+.button-group {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem; 
+  margin-top: 3rem;
+}
+
+.button-group button {
+  margin: 0 0.5rem; 
+}
+
+
 #mode {
   padding: 3rem;
   font-size: 1.4rem;

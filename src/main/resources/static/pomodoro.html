@@ -2,43 +2,44 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pomodoro Timer</title>
     <!-- box-icons import -->
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="css/pomodoro.css">
+    <link rel="stylesheet" href="css/pomodoro.css" />
 </head>
 
 <body>
-
     <section>
         <div class="blurCircle-1"></div>
         <div class="blurCircle-2"></div>
 
         <header>
             <h1>Pomodoro <span>T</span>imer</h1>
-            <a href="dashboard.html"><i class='bx bx-log-out-circle'></i></a>
+            <a href="dashboard.html"><i class="bx bx-log-out-circle"></i></a>
         </header>
-
-        <div class="timer-container">
-            <div id="timer">25:00 
-                <!-- <h4>mins</h4>
-                <h4>second</h4> -->
+        <div class="box-container">
+            <div class="timer-container ">
+                <div id="timer">25:00</div>
             </div>
             <div class="button-container">
-                <button id="start-btn">Start</button>
-                <button id="pause-btn">Pause</button>
-                <button id="reset-btn">Reset</button>
+                <div class="button-group">
+                    <button id="start-btn">Start</button>
+                    <button id="pause-btn">Pause</button>
+                    <button id="reset-btn">Reset</button>
+                </div>
                 <button id="switch-mode-btn">Switch Mode</button>
-                <button id="short-break-btn" style="display: none;">Short Break</button>
-                <button id="long-break-btn" style="display: none;">Long Break</button>
+                <button id="short-break-btn" style="display: none">
+                    Short Break
+                </button>
+                <button id="long-break-btn" style="display: none">Long Break</button>
             </div>
             <div id="mode"></div>
         </div>
-
     </section>
-    <script src="js/pomodoro.js"></script> <!-- Link to JavaScript file for functionality -->
+    <script src="js/pomodoro.js"></script>
+    <!-- Link to JavaScript file for functionality -->
 </body>
 
 </html>
