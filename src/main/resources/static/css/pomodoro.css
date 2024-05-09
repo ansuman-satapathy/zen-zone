@@ -105,18 +105,18 @@ header a:hover {
 }
 
 .box-container {
-  width: 80rem;
+  width: 60rem;
   height: auto;
   justify-content: center;
   align-items: center; 
   text-align: center;
   background-color: none;
   border-radius: 4rem;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   display: flex; 
   top: 50%;
   left: 50%;
-  transform: translate(40%, 7%);
+  transform: translate(70%, 7%);
   flex-direction: column; 
 }
 
