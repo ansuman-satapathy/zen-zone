@@ -23,11 +23,11 @@
   --addClickColor: #9942ab;
   --blurCircle-1: #b6b5ff;
   --blurCircle-2: #fea5ff;
-  --completeBgColor:#de60f8;
+  --completeBgColor:#68e3b4;
   --completeClickColor: #2a622d;
-  --trashBgColor:#a72d25;
+  --trashBgColor:#ff8b3e;
   --trashClickColor:#a72d25;
-  --editBgColor: #a09c9c;
+  --editBgColor: #6ed6ee;
   --editClickColor:#00526d;
   --secondTextColor:#ffffff;
 }
@@ -146,6 +146,11 @@ section {
 .form input:focus {
   outline: none;
   box-shadow: 0 0 0 2px var(--spanColor); 
+}
+
+.note p{
+  font-size: 1.4rem;
+  text-align: center;
 }
 
 /* add button stylling */
