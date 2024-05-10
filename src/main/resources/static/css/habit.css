@@ -181,7 +181,6 @@ form {
     color: var(--textColor);
   }
 
-
   #habitsContainer {
     max-height: 22rem;
     overflow-y: auto;
@@ -193,6 +192,7 @@ form {
     align-items: center;
     text-align: center;
     font-size: 2rem;
+    padding-bottom: 1rem;
   }
   .habit {
     background-color: var(--divBackgroundColor);
