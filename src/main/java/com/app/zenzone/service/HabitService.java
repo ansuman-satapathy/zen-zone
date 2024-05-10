@@ -40,10 +40,6 @@ public class HabitService {
         habitRepository.deleteById(id);
     }
 
-    public void deleteAllHabits() {
-        habitRepository.deleteAll();
-    }
-
     public Habit markHabitAsCompleted(Long id) {
         Optional<Habit> optionalHabit = habitRepository.findById(id);
         if (optionalHabit.isPresent()) {

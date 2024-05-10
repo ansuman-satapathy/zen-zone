@@ -14,12 +14,8 @@ public class JournalService {
     @Autowired
     private JournalRepository journalRepository;
 
-    public List<Journal> getAllJournalsOrderByDateAsc() {
-        return journalRepository.findAllByOrderByDateAsc();
-    }
-
-    public List<Journal> getAllJournalsOrderByDateDesc() {
-        return journalRepository.findAllByOrderByDateDesc();
+    public List<Journal> getallJournals() {
+        return journalRepository.findAll();
     }
 
     public Journal createJournal(Journal journal) {
@@ -35,15 +31,11 @@ public class JournalService {
             updatedJournal.setId(id);
             return journalRepository.save(updatedJournal);
         } else {
-            return null; // Handle not found case
+            return null;
         }
     }
 
     public void deleteJournal(Long id) {
         journalRepository.deleteById(id);
-    }
-
-    public void deleteAllJournals() {
-        journalRepository.deleteAll();
     }
 }

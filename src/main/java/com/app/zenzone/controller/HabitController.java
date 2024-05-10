@@ -50,11 +50,6 @@ public class HabitController {
         habitService.deleteHabit(id);
     }
 
-    @DeleteMapping
-    public void deleteAllHabits() {
-        habitService.deleteAllHabits();
-    }
-
     @PostMapping("/{id}/complete")
     public ResponseEntity<Habit> markHabitAsCompleted(@PathVariable Long id) {
         try {

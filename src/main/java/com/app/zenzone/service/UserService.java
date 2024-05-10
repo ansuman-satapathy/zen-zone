@@ -5,7 +5,4 @@ import com.app.zenzone.model.User;
 public interface UserService {
 
     public User saveUser(User user);
-
-    public void removeSessionMessage();
-
 }

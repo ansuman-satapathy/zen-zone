@@ -18,10 +18,7 @@ public class JournalController {
 
     @GetMapping
     public List<Journal> getAllJournals(@RequestParam(required = false, defaultValue = "asc") String order) {
-        if ("desc".equalsIgnoreCase(order)) {
-            return journalService.getAllJournalsOrderByDateDesc();
-        }
-        return journalService.getAllJournalsOrderByDateAsc();
+        return journalService.getallJournals();
     }
 
     @PostMapping
@@ -47,16 +44,9 @@ public class JournalController {
         }
     }
 
-
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteJournal(@PathVariable Long id) {
         journalService.deleteJournal(id);
-        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-    }
-
-    @DeleteMapping
-    public ResponseEntity<Void> deleteAllJournals() {
-        journalService.deleteAllJournals();
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 }

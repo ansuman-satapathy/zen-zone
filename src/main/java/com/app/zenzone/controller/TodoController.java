@@ -51,22 +51,6 @@ public class TodoController {
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
-    @DeleteMapping
-    public ResponseEntity<Void> deleteAllTodos() {
-        todoService.deleteAllTodos();
-        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-    }
-
-    @GetMapping("/sort/due-date")
-    public List<Todo> sortByDueDate() {
-        return todoService.sortByDueDate();
-    }
-
-    @GetMapping("/sort/priority")
-    public List<Todo> sortByPriority() {
-        return todoService.sortByPriority();
-    }
-
     @PostMapping("/{id}/complete")
     public ResponseEntity<Todo> markTodoAsCompleted(@PathVariable Long id) {
         try {
@@ -77,4 +61,3 @@ public class TodoController {
         }
     }
 }
-
