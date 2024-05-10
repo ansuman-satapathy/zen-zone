@@ -115,7 +115,7 @@ document.addEventListener("DOMContentLoaded", function () {
       document.getElementById("descriptionInput").value = todoDescription;
       document.getElementById("dueDateInput").value = todoDueDate;
       document.getElementById("priorityInput").value = todoPriority;
-      document.getElementById("categoryInput").value = todoCategory;
+      // document.getElementById("categoryInput").value = todoCategory;
 
       // Change form submit button to update todo
       todoForm.setAttribute("data-action", "update");
