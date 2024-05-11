@@ -11,9 +11,6 @@ import java.util.List;
 @Repository
 public interface JournalRepository extends JpaRepository<Journal, Long> {
 
-    List<Journal> findAllByOrderByDateDesc();
-
-    List<Journal> findAllByOrderByDateAsc();
 
    
 }
