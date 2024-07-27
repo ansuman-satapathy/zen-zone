@@ -41,7 +41,7 @@ The Personal Productivity Suite is a web application designed to help users mana
 - Java
 - Spring Boot
 - HTML/CSS/JavaScript
-- [Additional libraries/frameworks/tools]
+- Additional libraries/frameworks/tools
 
 ## Pre-requisites
 
