@@ -1,4 +1,4 @@
-# ZenZone
+# ZenZone ♑️
 
 Everything you need to be more productive and to fix your physical & mental health.
 
